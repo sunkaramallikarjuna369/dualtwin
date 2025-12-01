@@ -24,170 +24,428 @@
     </header>
 
     <main>
+        <!-- WHAT Section with Live Machine Animation -->
         <section id="what" class="section">
             <h2>What is a Digital Twin?</h2>
             <div class="content-wrapper">
-                <div class="non-technical">
-                    <h3>Simple Explanation</h3>
-                    <p>Imagine having a detailed, living model of your car on your phone. This model knows everything about your actual car - how fast it's going, fuel level, engine temperature, and even when parts might need replacement.</p>
-                    <p>When something changes in your real car, the model updates automatically. This virtual copy is a <strong>digital twin</strong>.</p>
+                <div class="explanation-box">
+                    <div class="non-technical">
+                        <h3>Simple Explanation</h3>
+                        <p>Imagine having a <strong>living copy</strong> of a real machine on your computer. When the real machine heats up, your computer copy shows the same temperature. When the real machine vibrates, your copy vibrates too!</p>
+                    </div>
+                    <div class="technical hidden">
+                        <h3>Technical Definition</h3>
+                        <p>A <strong>Digital Twin</strong> is a dynamic virtual representation synchronized with a physical entity through continuous bidirectional data exchange, enabling real-time monitoring, simulation, and predictive analytics.</p>
+                    </div>
                 </div>
-                <div class="technical hidden">
-                    <h3>Technical Definition</h3>
-                    <p>A <strong>Digital Twin</strong> is a dynamic, virtual representation of a physical entity (asset, process, or system) that is synchronized with its real-world counterpart through continuous data exchange.</p>
-                    <p>Key characteristics include bidirectional data flow, real-time synchronization, simulation capability, and lifecycle persistence.</p>
-                </div>
-                <div class="diagram">
-                    <div class="twin-visual">
-                        <div class="physical-side">
-                            <div class="asset" id="physicalAsset">
-                                <span class="icon">&#9881;</span>
-                                <span class="label">Physical Asset</span>
-                                <div class="sensor-value" id="physicalValue">25°C</div>
+                
+                <!-- Interactive Factory Machine Animation -->
+                <div class="animation-container">
+                    <h3>Watch the Digital Twin in Action</h3>
+                    <div class="factory-scene">
+                        <!-- Physical World Side -->
+                        <div class="world-side physical-world">
+                            <div class="world-label">PHYSICAL WORLD</div>
+                            <div class="machine-container">
+                                <div class="factory-machine" id="physicalMachine">
+                                    <div class="machine-body">
+                                        <div class="machine-screen">
+                                            <span class="temp-display" id="physicalTemp">25°C</span>
+                                        </div>
+                                        <div class="machine-motor" id="physicalMotor">
+                                            <div class="motor-blade"></div>
+                                            <div class="motor-blade"></div>
+                                            <div class="motor-blade"></div>
+                                        </div>
+                                        <div class="machine-gauge">
+                                            <div class="gauge-needle" id="physicalNeedle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="machine-base"></div>
+                                    <div class="steam-container" id="steamContainer">
+                                        <div class="steam"></div>
+                                        <div class="steam"></div>
+                                        <div class="steam"></div>
+                                    </div>
+                                </div>
+                                <div class="sensor-dots">
+                                    <div class="sensor-dot" id="sensor1"></div>
+                                    <div class="sensor-dot" id="sensor2"></div>
+                                    <div class="sensor-dot" id="sensor3"></div>
+                                </div>
                             </div>
                         </div>
-                        <div class="data-flow">
-                            <div class="arrow" id="dataArrow">
-                                <span class="arrow-label">Data Flow</span>
+                        
+                        <!-- Data Flow Animation -->
+                        <div class="data-stream">
+                            <div class="data-packet" id="packet1"></div>
+                            <div class="data-packet" id="packet2"></div>
+                            <div class="data-packet" id="packet3"></div>
+                            <div class="stream-label">Real-time Data</div>
+                        </div>
+                        
+                        <!-- Digital World Side -->
+                        <div class="world-side digital-world">
+                            <div class="world-label">DIGITAL TWIN</div>
+                            <div class="machine-container">
+                                <div class="factory-machine digital" id="digitalMachine">
+                                    <div class="machine-body">
+                                        <div class="machine-screen">
+                                            <span class="temp-display" id="digitalTemp">25°C</span>
+                                        </div>
+                                        <div class="machine-motor" id="digitalMotor">
+                                            <div class="motor-blade"></div>
+                                            <div class="motor-blade"></div>
+                                            <div class="motor-blade"></div>
+                                        </div>
+                                        <div class="machine-gauge">
+                                            <div class="gauge-needle" id="digitalNeedle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="machine-base"></div>
+                                    <div class="digital-glow"></div>
+                                </div>
+                                <div class="twin-status">
+                                    <span class="status-dot"></span>
+                                    <span>Synchronized</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="digital-side">
-                            <div class="twin" id="digitalTwin">
-                                <span class="icon">&#128187;</span>
-                                <span class="label">Digital Twin</span>
-                                <div class="sensor-value" id="twinValue">25°C</div>
+                    </div>
+                    
+                    <!-- Control Panel -->
+                    <div class="control-panel">
+                        <h4>Try It Yourself!</h4>
+                        <div class="controls">
+                            <div class="control-group">
+                                <label>Temperature</label>
+                                <input type="range" id="tempSlider" min="20" max="100" value="25">
+                                <span id="tempValue">25°C</span>
                             </div>
+                            <div class="control-group">
+                                <label>Motor Speed</label>
+                                <input type="range" id="speedSlider" min="0" max="100" value="50">
+                                <span id="speedValue">50%</span>
+                            </div>
+                            <button id="alertBtn" class="alert-btn">Simulate Alert</button>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section with Animated Benefits -->
         <section id="why" class="section">
             <h2>Why Digital Twins Matter</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128065;</div>
-                    <h3>Visibility</h3>
-                    <p>See what's happening with your assets in real-time from anywhere</p>
+            <div class="benefits-showcase">
+                <div class="benefit-demo" id="visibilityDemo">
+                    <div class="benefit-animation">
+                        <div class="eye-icon">
+                            <div class="eye">
+                                <div class="pupil"></div>
+                            </div>
+                        </div>
+                        <div class="visibility-rays">
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                            <div class="ray"></div>
+                        </div>
+                    </div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>See inside machines without opening them. Monitor from anywhere in the world.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Analytics</h3>
-                    <p>Understand trends and patterns from historical data</p>
+                
+                <div class="benefit-demo" id="predictionDemo">
+                    <div class="benefit-animation">
+                        <div class="crystal-ball">
+                            <div class="ball-glow"></div>
+                            <div class="future-icon">!</div>
+                        </div>
+                        <div class="prediction-timeline">
+                            <span>Now</span>
+                            <div class="timeline-dots">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                            </div>
+                            <span>Future</span>
+                        </div>
+                    </div>
+                    <h3>Predict Problems</h3>
+                    <p>Know when parts will fail BEFORE they break. Schedule maintenance smartly.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128302;</div>
-                    <h3>Prediction</h3>
-                    <p>Anticipate problems before they occur</p>
+                
+                <div class="benefit-demo" id="savingsDemo">
+                    <div class="benefit-animation">
+                        <div class="piggy-bank">
+                            <div class="coin-slot"></div>
+                            <div class="falling-coin">$</div>
+                        </div>
+                        <div class="savings-meter">
+                            <div class="meter-fill"></div>
+                            <span>30% Saved</span>
+                        </div>
+                    </div>
+                    <h3>Save Money</h3>
+                    <p>Reduce unexpected breakdowns and maintenance costs significantly.</p>
                 </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduce maintenance costs and downtime</p>
+                
+                <div class="benefit-demo" id="simulationDemo">
+                    <div class="benefit-animation">
+                        <div class="test-tube">
+                            <div class="liquid"></div>
+                            <div class="bubble"></div>
+                            <div class="bubble"></div>
+                        </div>
+                        <div class="safe-badge">SAFE TEST</div>
+                    </div>
+                    <h3>Test Safely</h3>
+                    <p>Try changes on the digital twin first. No risk to real equipment.</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section with Industry Animations -->
         <section id="where" class="section">
             <h2>Where Digital Twins Are Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
+            <div class="industry-showcase">
+                <div class="industry-card" data-industry="manufacturing">
+                    <div class="industry-animation">
+                        <div class="factory-anim">
+                            <div class="conveyor-belt">
+                                <div class="belt-line"></div>
+                                <div class="product-box"></div>
+                                <div class="product-box"></div>
+                                <div class="product-box"></div>
+                            </div>
+                            <div class="robot-arm">
+                                <div class="arm-segment"></div>
+                                <div class="arm-claw"></div>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Manufacturing</h3>
-                    <p>Production lines, CNC machines, quality control</p>
+                    <p>Monitor production lines, predict machine failures, optimize output</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
+                
+                <div class="industry-card" data-industry="energy">
+                    <div class="industry-animation">
+                        <div class="wind-turbine">
+                            <div class="turbine-pole"></div>
+                            <div class="turbine-head">
+                                <div class="blade-container">
+                                    <div class="blade"></div>
+                                    <div class="blade"></div>
+                                    <div class="blade"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Energy</h3>
-                    <p>Wind turbines, power plants, solar farms</p>
+                    <p>Optimize wind farms, manage power grids, monitor solar panels</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
-                    <p>HVAC systems, elevators, smart buildings</p>
+                
+                <div class="industry-card" data-industry="buildings">
+                    <div class="industry-animation">
+                        <div class="smart-building">
+                            <div class="building-structure">
+                                <div class="floor">
+                                    <div class="window on"></div>
+                                    <div class="window"></div>
+                                </div>
+                                <div class="floor">
+                                    <div class="window"></div>
+                                    <div class="window on"></div>
+                                </div>
+                                <div class="floor">
+                                    <div class="window on"></div>
+                                    <div class="window on"></div>
+                                </div>
+                            </div>
+                            <div class="temp-indicator">22°C</div>
+                        </div>
+                    </div>
+                    <h3>Smart Buildings</h3>
+                    <p>Control HVAC, optimize energy use, manage occupancy</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
-                    <p>Aircraft, ships, vehicle fleets</p>
+                
+                <div class="industry-card" data-industry="healthcare">
+                    <div class="industry-animation">
+                        <div class="heartbeat-monitor">
+                            <svg viewBox="0 0 100 50" class="ecg-line">
+                                <path d="M0,25 L20,25 L25,25 L30,10 L35,40 L40,25 L45,25 L100,25" 
+                                      fill="none" stroke="#00ff88" stroke-width="2"/>
+                            </svg>
+                            <div class="heart-pulse">&#10084;</div>
+                        </div>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Patient monitoring, medical device twins, hospital operations</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section with Role Animation -->
         <section id="who" class="section">
             <h2>Who Uses Digital Twins</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
+            <div class="roles-showcase">
+                <div class="role-card active" data-role="operator">
+                    <div class="role-avatar">
+                        <div class="avatar-icon">&#128119;</div>
+                        <div class="role-bubble">
+                            <span class="alert-icon">!</span>
+                            Alert received!
+                        </div>
+                    </div>
                     <h3>Operators</h3>
-                    <p>Monitor equipment status and receive alerts</p>
+                    <p>Monitor equipment status and respond to alerts in real-time</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
+                
+                <div class="role-card" data-role="engineer">
+                    <div class="role-avatar">
+                        <div class="avatar-icon">&#128736;</div>
+                        <div class="role-bubble">
+                            <div class="mini-chart">
+                                <div class="bar" style="height: 60%"></div>
+                                <div class="bar" style="height: 80%"></div>
+                                <div class="bar" style="height: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Engineers</h3>
-                    <p>Diagnose problems and optimize performance</p>
+                    <p>Diagnose problems and optimize system performance</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
+                
+                <div class="role-card" data-role="analyst">
+                    <div class="role-avatar">
+                        <div class="avatar-icon">&#128202;</div>
+                        <div class="role-bubble">
+                            <div class="trend-arrow">&#8599;</div>
+                        </div>
+                    </div>
                     <h3>Data Scientists</h3>
-                    <p>Build analytics and predictive models</p>
+                    <p>Build predictive models and find hidden patterns</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
+                
+                <div class="role-card" data-role="manager">
+                    <div class="role-avatar">
+                        <div class="avatar-icon">&#128188;</div>
+                        <div class="role-bubble">
+                            <div class="kpi-display">98%</div>
+                        </div>
+                    </div>
                     <h3>Managers</h3>
-                    <p>Track KPIs and make strategic decisions</p>
+                    <p>Track KPIs and make data-driven strategic decisions</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section with Step-by-Step Flow Animation -->
         <section id="how" class="section">
             <h2>How Digital Twins Work</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 5</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
-                </div>
-                <div class="architecture-visual">
-                    <div class="arch-layer" id="layer1">
-                        <div class="layer-box sensors">
-                            <h4>Physical World</h4>
-                            <p>Sensors collect data</p>
+            <div class="process-flow">
+                <div class="flow-step" id="step1">
+                    <div class="step-icon">
+                        <div class="sensor-anim">
+                            <div class="sensor-body"></div>
+                            <div class="signal-wave"></div>
+                            <div class="signal-wave"></div>
                         </div>
                     </div>
-                    <div class="arch-arrow" id="arrow1">&darr;</div>
-                    <div class="arch-layer" id="layer2">
-                        <div class="layer-box ingestion">
-                            <h4>Data Ingestion</h4>
-                            <p>IoT gateway processes data</p>
-                        </div>
-                    </div>
-                    <div class="arch-arrow" id="arrow2">&darr;</div>
-                    <div class="arch-layer" id="layer3">
-                        <div class="layer-box platform">
-                            <h4>Twin Platform</h4>
-                            <p>Model, analytics, simulation</p>
-                        </div>
-                    </div>
-                    <div class="arch-arrow" id="arrow3">&darr;</div>
-                    <div class="arch-layer" id="layer4">
-                        <div class="layer-box visualization">
-                            <h4>Visualization</h4>
-                            <p>Dashboards and alerts</p>
-                        </div>
-                    </div>
-                    <div class="arch-arrow" id="arrow4">&darr;</div>
-                    <div class="arch-layer" id="layer5">
-                        <div class="layer-box action">
-                            <h4>Action</h4>
-                            <p>Decisions and control</p>
-                        </div>
+                    <div class="step-content">
+                        <div class="step-number">1</div>
+                        <h4>Sensors Collect Data</h4>
+                        <p>Physical sensors measure temperature, vibration, pressure continuously</p>
                     </div>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Sensors on physical assets collect real-time data about temperature, pressure, vibration, and other parameters.</p>
+                
+                <div class="flow-arrow">
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
                 </div>
+                
+                <div class="flow-step" id="step2">
+                    <div class="step-icon">
+                        <div class="data-stream-anim">
+                            <div class="data-bit">01</div>
+                            <div class="data-bit">10</div>
+                            <div class="data-bit">11</div>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">2</div>
+                        <h4>Data Streams to Cloud</h4>
+                        <p>IoT gateways transmit data securely to cloud platforms</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                </div>
+                
+                <div class="flow-step" id="step3">
+                    <div class="step-icon">
+                        <div class="twin-sync-anim">
+                            <div class="sync-ring"></div>
+                            <div class="sync-core"></div>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">3</div>
+                        <h4>Twin Synchronizes</h4>
+                        <p>Digital model updates to match real-world state instantly</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                </div>
+                
+                <div class="flow-step" id="step4">
+                    <div class="step-icon">
+                        <div class="ai-brain-anim">
+                            <div class="brain-outline"></div>
+                            <div class="neuron"></div>
+                            <div class="neuron"></div>
+                            <div class="neuron"></div>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">4</div>
+                        <h4>AI Analyzes</h4>
+                        <p>Machine learning detects anomalies and predicts future states</p>
+                    </div>
+                </div>
+                
+                <div class="flow-arrow">
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                    <div class="arrow-particle"></div>
+                </div>
+                
+                <div class="flow-step" id="step5">
+                    <div class="step-icon">
+                        <div class="action-anim">
+                            <div class="action-circle"></div>
+                            <div class="checkmark">&#10003;</div>
+                        </div>
+                    </div>
+                    <div class="step-content">
+                        <div class="step-number">5</div>
+                        <h4>Actions Taken</h4>
+                        <p>Alerts sent, controls adjusted, maintenance scheduled</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch the Full Process</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>

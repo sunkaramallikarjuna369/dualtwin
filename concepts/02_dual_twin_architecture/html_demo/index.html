@@ -20,106 +20,428 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>02 - Dual-Twin Architecture</h1>
-        <p class="subtitle">Understanding dual-twin architecture in digital twin systems</p>
+        <p class="subtitle">Two twins working together for complete insights</p>
     </header>
 
     <main>
+        <!-- WHAT Section with Dual Twin Visualization -->
         <section id="what" class="section">
             <h2>What is Dual-Twin Architecture?</h2>
             <div class="content-wrapper">
-                <div class="non-technical">
-                    <h3>Simple Explanation</h3>
-                    <p>Imagine having two mirrors instead of one - one showing a single machine, another showing the entire production line. Together they give you a complete picture.</p>
+                <div class="explanation-box">
+                    <div class="non-technical">
+                        <h3>Simple Explanation</h3>
+                        <p>Think of it like having <strong>two specialists</strong> working together: one expert watches a single machine (Asset Twin), while another expert watches the entire production process (Process Twin). Together, they see the complete picture!</p>
+                    </div>
+                    <div class="technical hidden">
+                        <h3>Technical Definition</h3>
+                        <p>Dual-Twin Architecture pairs an <strong>Asset Digital Twin</strong> (representing physical equipment state) with a <strong>Process Digital Twin</strong> (representing workflow and operations), enabling bidirectional data exchange for holistic system optimization.</p>
+                    </div>
                 </div>
-                <div class="technical hidden">
-                    <h3>Technical Definition</h3>
-                    <p>A design pattern where multiple digital twins are interconnected to provide complementary perspectives, typically pairing asset twins with process twins.</p>
+                
+                <!-- Interactive Dual Twin Animation -->
+                <div class="dual-twin-demo">
+                    <h3>Watch Two Twins Work Together</h3>
+                    <div class="dual-scene">
+                        <!-- Physical World -->
+                        <div class="physical-layer">
+                            <div class="layer-label">PHYSICAL WORLD</div>
+                            <div class="factory-floor">
+                                <div class="machine-unit" id="machine1">
+                                    <div class="machine-icon">&#9881;</div>
+                                    <div class="machine-status running">Running</div>
+                                    <div class="machine-temp">45°C</div>
+                                </div>
+                                <div class="conveyor-line">
+                                    <div class="product-item"></div>
+                                    <div class="product-item"></div>
+                                    <div class="product-item"></div>
+                                </div>
+                                <div class="machine-unit" id="machine2">
+                                    <div class="machine-icon">&#9881;</div>
+                                    <div class="machine-status running">Running</div>
+                                    <div class="machine-temp">52°C</div>
+                                </div>
+                                <div class="conveyor-line">
+                                    <div class="product-item"></div>
+                                    <div class="product-item"></div>
+                                </div>
+                                <div class="machine-unit" id="machine3">
+                                    <div class="machine-icon">&#9881;</div>
+                                    <div class="machine-status running">Running</div>
+                                    <div class="machine-temp">38°C</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Flow Arrows -->
+                        <div class="data-flow-vertical">
+                            <div class="flow-particle"></div>
+                            <div class="flow-particle"></div>
+                            <div class="flow-particle"></div>
+                        </div>
+                        
+                        <!-- Twin Layer -->
+                        <div class="twin-layer">
+                            <!-- Asset Twin -->
+                            <div class="twin-box asset-twin" id="assetTwin">
+                                <div class="twin-header">
+                                    <div class="twin-icon">&#128187;</div>
+                                    <h4>ASSET TWIN</h4>
+                                    <div class="twin-badge">Equipment Focus</div>
+                                </div>
+                                <div class="twin-content">
+                                    <div class="asset-monitor">
+                                        <div class="monitor-item">
+                                            <span class="label">Machine 1</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill" style="width: 85%"></div>
+                                            </div>
+                                            <span class="value">85%</span>
+                                        </div>
+                                        <div class="monitor-item">
+                                            <span class="label">Machine 2</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill warning" style="width: 62%"></div>
+                                            </div>
+                                            <span class="value">62%</span>
+                                        </div>
+                                        <div class="monitor-item">
+                                            <span class="label">Machine 3</span>
+                                            <div class="health-bar">
+                                                <div class="health-fill" style="width: 94%"></div>
+                                            </div>
+                                            <span class="value">94%</span>
+                                        </div>
+                                    </div>
+                                    <div class="twin-insight">
+                                        <span class="insight-icon">&#9888;</span>
+                                        <span>Machine 2 needs attention</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Connection Bridge -->
+                            <div class="twin-bridge">
+                                <div class="bridge-line"></div>
+                                <div class="bridge-data" id="bridgeData1"></div>
+                                <div class="bridge-data" id="bridgeData2"></div>
+                                <div class="bridge-label">Data Exchange</div>
+                            </div>
+                            
+                            <!-- Process Twin -->
+                            <div class="twin-box process-twin" id="processTwin">
+                                <div class="twin-header">
+                                    <div class="twin-icon">&#128202;</div>
+                                    <h4>PROCESS TWIN</h4>
+                                    <div class="twin-badge">Workflow Focus</div>
+                                </div>
+                                <div class="twin-content">
+                                    <div class="process-flow-mini">
+                                        <div class="flow-stage active">
+                                            <div class="stage-dot"></div>
+                                            <span>Input</span>
+                                        </div>
+                                        <div class="flow-connector"></div>
+                                        <div class="flow-stage active">
+                                            <div class="stage-dot"></div>
+                                            <span>Process</span>
+                                        </div>
+                                        <div class="flow-connector"></div>
+                                        <div class="flow-stage">
+                                            <div class="stage-dot"></div>
+                                            <span>Output</span>
+                                        </div>
+                                    </div>
+                                    <div class="process-metrics">
+                                        <div class="metric">
+                                            <span class="metric-value">87%</span>
+                                            <span class="metric-label">Efficiency</span>
+                                        </div>
+                                        <div class="metric">
+                                            <span class="metric-value">12</span>
+                                            <span class="metric-label">Units/hr</span>
+                                        </div>
+                                    </div>
+                                    <div class="twin-insight">
+                                        <span class="insight-icon">&#128161;</span>
+                                        <span>Bottleneck at Machine 2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Combined Insight -->
+                        <div class="combined-insight">
+                            <div class="insight-header">
+                                <span class="pulse-dot"></span>
+                                <h4>COMBINED INSIGHT</h4>
+                            </div>
+                            <p id="combinedMessage">Machine 2's declining health (62%) is causing the process bottleneck. Recommend preventive maintenance to restore 87% → 95% efficiency.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Interactive Controls -->
+                    <div class="demo-controls">
+                        <button id="simulateIssue" class="control-btn issue">Simulate Machine Issue</button>
+                        <button id="fixIssue" class="control-btn fix">Fix Issue</button>
+                        <button id="toggleView" class="control-btn view">Toggle Twin Focus</button>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section -->
         <section id="why" class="section">
-            <h2>Why Dual-Twin Architecture Matters</h2>
-            <div class="benefits-grid">
+            <h2>Why Use Two Twins Instead of One?</h2>
+            <div class="comparison-demo">
+                <div class="comparison-side single">
+                    <h3>Single Twin</h3>
+                    <div class="comparison-visual">
+                        <div class="single-twin-icon">&#128187;</div>
+                        <div class="view-scope narrow">
+                            <span>Limited View</span>
+                        </div>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Sees only equipment OR process</li>
+                        <li>Misses cross-system patterns</li>
+                        <li>Reactive problem solving</li>
+                    </ul>
+                </div>
+                
+                <div class="vs-divider">
+                    <span>VS</span>
+                </div>
+                
+                <div class="comparison-side dual">
+                    <h3>Dual Twin</h3>
+                    <div class="comparison-visual">
+                        <div class="dual-twin-icons">
+                            <div class="mini-twin">&#128187;</div>
+                            <div class="connection-line"></div>
+                            <div class="mini-twin">&#128202;</div>
+                        </div>
+                        <div class="view-scope wide">
+                            <span>Complete View</span>
+                        </div>
+                    </div>
+                    <ul class="comparison-list">
+                        <li>Sees equipment AND process together</li>
+                        <li>Discovers hidden correlations</li>
+                        <li>Proactive optimization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="benefits-showcase">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-anim">
+                        <div class="puzzle-pieces">
+                            <div class="piece piece1"></div>
+                            <div class="piece piece2"></div>
+                        </div>
+                    </div>
+                    <h3>Complete Picture</h3>
+                    <p>See how equipment health affects process efficiency</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <div class="benefit-anim">
+                        <div class="root-cause">
+                            <div class="symptom">Symptom</div>
+                            <div class="arrow-down"></div>
+                            <div class="cause">Root Cause</div>
+                        </div>
+                    </div>
+                    <h3>Find Root Causes</h3>
+                    <p>Trace process issues back to equipment problems</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-anim">
+                        <div class="optimization-cycle">
+                            <div class="cycle-arrow"></div>
+                            <span>Optimize</span>
+                        </div>
+                    </div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Both twins learn from each other</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
+            <h2>Where Dual-Twins Excel</h2>
+            <div class="use-case-showcase">
+                <div class="use-case-card" data-case="manufacturing">
+                    <div class="case-animation">
+                        <div class="factory-mini">
+                            <div class="assembly-line">
+                                <div class="station"></div>
+                                <div class="station"></div>
+                                <div class="station"></div>
+                            </div>
+                            <div class="twin-overlay">
+                                <span class="overlay-label">Asset + Process</span>
+                            </div>
+                        </div>
+                    </div>
                     <h3>Manufacturing</h3>
+                    <p>Machine health + Production flow optimization</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                
+                <div class="use-case-card" data-case="energy">
+                    <div class="case-animation">
+                        <div class="power-grid">
+                            <div class="generator"></div>
+                            <div class="power-line"></div>
+                            <div class="consumer"></div>
+                        </div>
+                    </div>
+                    <h3>Energy Grid</h3>
+                    <p>Equipment status + Power distribution flow</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                
+                <div class="use-case-card" data-case="logistics">
+                    <div class="case-animation">
+                        <div class="supply-chain">
+                            <div class="warehouse"></div>
+                            <div class="truck-icon">&#128666;</div>
+                            <div class="destination"></div>
+                        </div>
+                    </div>
+                    <h3>Supply Chain</h3>
+                    <p>Vehicle health + Delivery process tracking</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                
+                <div class="use-case-card" data-case="healthcare">
+                    <div class="case-animation">
+                        <div class="hospital-flow">
+                            <div class="patient-icon">&#128100;</div>
+                            <div class="treatment-path"></div>
+                            <div class="equipment-icon">&#128137;</div>
+                        </div>
+                    </div>
+                    <h3>Healthcare</h3>
+                    <p>Medical device status + Patient care workflow</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
+            <h2>Who Benefits from Dual-Twins?</h2>
+            <div class="stakeholder-map">
+                <div class="stakeholder" data-role="operator">
+                    <div class="stakeholder-icon">&#128119;</div>
                     <h3>Operators</h3>
+                    <div class="benefit-bubble">
+                        <p>"I see both machine alerts AND how they affect production!"</p>
+                    </div>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
+                
+                <div class="stakeholder" data-role="engineer">
+                    <div class="stakeholder-icon">&#128736;</div>
                     <h3>Engineers</h3>
+                    <div class="benefit-bubble">
+                        <p>"I can trace process issues to specific equipment causes!"</p>
+                    </div>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                
+                <div class="stakeholder" data-role="analyst">
+                    <div class="stakeholder-icon">&#128202;</div>
+                    <h3>Analysts</h3>
+                    <div class="benefit-bubble">
+                        <p>"I discover correlations between asset and process data!"</p>
+                    </div>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
+                
+                <div class="stakeholder" data-role="manager">
+                    <div class="stakeholder-icon">&#128188;</div>
                     <h3>Managers</h3>
+                    <div class="benefit-bubble">
+                        <p>"I get unified KPIs showing the full operational picture!"</p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How Dual-Twins Communicate</h2>
+            <div class="communication-demo">
+                <div class="comm-step" id="commStep1">
+                    <div class="step-number">1</div>
+                    <div class="step-visual">
+                        <div class="data-source">
+                            <span>Sensors</span>
+                            <div class="sensor-pulse"></div>
+                        </div>
+                    </div>
+                    <h4>Data Collection</h4>
+                    <p>Sensors feed both twins with real-time data</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                
+                <div class="comm-arrow">
+                    <div class="arrow-flow-anim"></div>
                 </div>
+                
+                <div class="comm-step" id="commStep2">
+                    <div class="step-number">2</div>
+                    <div class="step-visual">
+                        <div class="twin-pair">
+                            <div class="mini-asset">A</div>
+                            <div class="mini-process">P</div>
+                        </div>
+                    </div>
+                    <h4>Parallel Processing</h4>
+                    <p>Each twin analyzes from its perspective</p>
+                </div>
+                
+                <div class="comm-arrow">
+                    <div class="arrow-flow-anim"></div>
+                </div>
+                
+                <div class="comm-step" id="commStep3">
+                    <div class="step-number">3</div>
+                    <div class="step-visual">
+                        <div class="exchange-visual">
+                            <div class="exchange-arrow left"></div>
+                            <div class="exchange-arrow right"></div>
+                        </div>
+                    </div>
+                    <h4>Data Exchange</h4>
+                    <p>Twins share insights bidirectionally</p>
+                </div>
+                
+                <div class="comm-arrow">
+                    <div class="arrow-flow-anim"></div>
+                </div>
+                
+                <div class="comm-step" id="commStep4">
+                    <div class="step-number">4</div>
+                    <div class="step-visual">
+                        <div class="unified-insight">
+                            <div class="insight-glow"></div>
+                            <span>&#128161;</span>
+                        </div>
+                    </div>
+                    <h4>Unified Insights</h4>
+                    <p>Combined analysis reveals deeper truths</p>
+                </div>
+            </div>
+            
+            <div class="demo-buttons">
+                <button id="runCommDemo" class="run-btn">&#9654; Watch Communication Flow</button>
+                <button id="resetCommDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../01_digital_twin_fundamentals/html_demo/index.html">&larr; Previous: Digital Twin Fundamentals</a> | 
+           <a href="../03_iot_and_sensor_data_streams/html_demo/index.html">Next: IoT & Sensor Data &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

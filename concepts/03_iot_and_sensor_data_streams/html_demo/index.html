@@ -20,106 +20,228 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>03 - IoT and Sensor Data Streams</h1>
-        <p class="subtitle">Understanding iot and sensor data streams in digital twin systems</p>
+        <p class="subtitle">Real-time data flowing from sensors to your digital twin</p>
     </header>
 
     <main>
+        <!-- WHAT Section with Sensor Animation -->
         <section id="what" class="section">
-            <h2>What is IoT and Sensor Data Streams?</h2>
-            <div class="content-wrapper">
+            <h2>What are IoT & Sensor Data Streams?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Think of sensors as the eyes and ears of your digital twin - they constantly watch and listen to what's happening in the physical world.</p>
+                    <p>Think of sensors as the <strong>eyes, ears, and nose</strong> of your digital twin. They constantly watch temperature, listen for vibrations, and smell for gas leaks - then instantly tell the twin what's happening!</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>The infrastructure and protocols for collecting, transmitting, and processing real-time data from physical sensors to digital twin systems.</p>
+                    <p>IoT sensor data streams are continuous flows of telemetry data from physical sensors (temperature, pressure, vibration, etc.) transmitted via protocols like MQTT, OPC-UA, or HTTP to digital twin platforms for real-time state synchronization.</p>
+                </div>
+            </div>
+            
+            <!-- Sensor Network Animation -->
+            <div class="animation-container">
+                <h3>Watch Data Flow from Sensors to Twin</h3>
+                <div class="sensor-demo">
+                    <!-- Sensor Layer -->
+                    <div class="sensor-layer">
+                        <div class="sensor-node" data-type="temp">
+                            <span class="sensor-icon">&#127777;</span>
+                            <span class="sensor-label">Temp</span>
+                            <span class="sensor-value">45°C</span>
+                        </div>
+                        <div class="sensor-node" data-type="pressure">
+                            <span class="sensor-icon">&#9041;</span>
+                            <span class="sensor-label">Pressure</span>
+                            <span class="sensor-value">2.4 bar</span>
+                        </div>
+                        <div class="sensor-node" data-type="vibration">
+                            <span class="sensor-icon">&#128200;</span>
+                            <span class="sensor-label">Vibration</span>
+                            <span class="sensor-value">0.3 mm/s</span>
+                        </div>
+                        <div class="sensor-node" data-type="flow">
+                            <span class="sensor-icon">&#128167;</span>
+                            <span class="sensor-label">Flow</span>
+                            <span class="sensor-value">12 L/min</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Data Stream Lines -->
+                    <div class="stream-container">
+                        <div class="stream-line">
+                            <div class="stream-particle"></div>
+                            <div class="stream-particle" style="animation-delay: 0.3s"></div>
+                        </div>
+                        <div class="stream-line">
+                            <div class="stream-particle" style="animation-delay: 0.1s"></div>
+                            <div class="stream-particle" style="animation-delay: 0.4s"></div>
+                        </div>
+                        <div class="stream-line">
+                            <div class="stream-particle" style="animation-delay: 0.2s"></div>
+                            <div class="stream-particle" style="animation-delay: 0.5s"></div>
+                        </div>
+                        <div class="stream-line">
+                            <div class="stream-particle" style="animation-delay: 0.15s"></div>
+                            <div class="stream-particle" style="animation-delay: 0.45s"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- IoT Hub -->
+                    <div class="hub-container">
+                        <div class="hub-icon">
+                            <span>&#128225;</span>
+                            <span class="hub-label">IoT Hub</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stream to Twin -->
+                    <div class="hub-to-twin">
+                        <div class="stream-particle"></div>
+                        <div class="stream-particle" style="animation-delay: 0.2s"></div>
+                        <div class="stream-particle" style="animation-delay: 0.4s"></div>
+                    </div>
+                    
+                    <!-- Digital Twin -->
+                    <div class="twin-receiver">
+                        <div class="twin-icon">&#128187;</div>
+                        <span class="twin-label">Digital Twin</span>
+                        <div class="twin-status">Receiving Data...</div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section -->
         <section id="why" class="section">
-            <h2>Why IoT and Sensor Data Streams Matters</h2>
+            <h2>Why Sensor Data Streams Matter</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128065;</div>
+                    <h3>Real-Time Visibility</h3>
+                    <p>See what's happening right now, not yesterday</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#9888;</div>
+                    <h3>Early Warning</h3>
+                    <p>Detect problems before they cause failures</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128202;</div>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>Make choices based on facts, not guesses</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <h3>Cost Reduction</h3>
+                    <p>Prevent expensive unplanned downtime</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
+            <h2>Where Sensors Are Used</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#127981;</span>
                     <h3>Manufacturing</h3>
+                    <p>Machine health, production quality</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#9889;</span>
                     <h3>Energy</h3>
+                    <p>Grid monitoring, renewable output</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127970;</span>
+                    <h3>Smart Buildings</h3>
+                    <p>HVAC, occupancy, energy use</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#128663;</span>
                     <h3>Transportation</h3>
+                    <p>Vehicle tracking, fleet health</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
+            <h2>Who Works with Sensor Data</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128119;</span>
                     <h3>Operators</h3>
+                    <p>Monitor real-time dashboards</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#128736;</span>
                     <h3>Engineers</h3>
+                    <p>Configure sensors and thresholds</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
                     <h3>Data Scientists</h3>
+                    <p>Analyze patterns and anomalies</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#128188;</span>
                     <h3>Managers</h3>
+                    <p>Review KPIs and trends</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How Data Flows from Sensor to Twin</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128225;</span>
+                    <h4>Sense</h4>
+                    <p>Sensor detects physical change</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128246;</span>
+                    <h4>Transmit</h4>
+                    <p>Data sent via MQTT/HTTP</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#9729;</span>
+                    <h4>Process</h4>
+                    <p>IoT Hub routes and filters</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128187;</span>
+                    <h4>Update</h4>
+                    <p>Twin state synchronized</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128161;</span>
+                    <h4>Act</h4>
+                    <p>Alerts or automation triggered</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch Data Flow</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../02_dual_twin_architecture/html_demo/index.html">&larr; Previous: Dual-Twin Architecture</a> | 
+           <a href="../04_data_models_and_semantics/html_demo/index.html">Next: Data Models &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

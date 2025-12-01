@@ -1,124 +1,291 @@
 // Digital Twin Fundamentals - Interactive Demo
 
 document.addEventListener('DOMContentLoaded', function() {
-    // View Toggle
+    // ===== VIEW TOGGLE =====
     const viewToggle = document.getElementById('viewToggle');
     const nonTechnical = document.querySelector('.non-technical');
     const technical = document.querySelector('.technical');
     let isTechnicalView = false;
 
-    viewToggle.addEventListener('click', function() {
-        isTechnicalView = !isTechnicalView;
-        if (isTechnicalView) {
-            nonTechnical.classList.add('hidden');
-            technical.classList.remove('hidden');
-            viewToggle.textContent = 'Simple View';
-        } else {
-            nonTechnical.classList.remove('hidden');
-            technical.classList.add('hidden');
-            viewToggle.textContent = 'Technical View';
-        }
-    });
-
-    // Temperature Animation
-    const physicalValue = document.getElementById('physicalValue');
-    const twinValue = document.getElementById('twinValue');
-    let temperature = 25;
-
-    function updateTemperature() {
-        temperature += (Math.random() - 0.5) * 2;
-        temperature = Math.max(20, Math.min(35, temperature));
-        
-        physicalValue.textContent = temperature.toFixed(1) + '°C';
-        
-        setTimeout(() => {
-            twinValue.textContent = temperature.toFixed(1) + '°C';
-        }, 500);
-    }
-
-    setInterval(updateTemperature, 2000);
-
-    // Architecture Steps
-    const steps = [
-        {
-            layers: [1],
-            arrows: [],
-            description: '<strong>Step 1:</strong> Sensors on physical assets collect real-time data about temperature, pressure, vibration, and other parameters.'
-        },
-        {
-            layers: [1, 2],
-            arrows: [1],
-            description: '<strong>Step 2:</strong> Data flows through IoT gateways that handle protocol translation, filtering, and initial processing.'
-        },
-        {
-            layers: [1, 2, 3],
-            arrows: [1, 2],
-            description: '<strong>Step 3:</strong> The digital twin platform receives data, updates the virtual model, and runs analytics and simulations.'
-        },
-        {
-            layers: [1, 2, 3, 4],
-            arrows: [1, 2, 3],
-            description: '<strong>Step 4:</strong> Insights are visualized through dashboards, 3D views, and alerts are generated based on rules and ML models.'
-        },
-        {
-            layers: [1, 2, 3, 4, 5],
-            arrows: [1, 2, 3, 4],
-            description: '<strong>Step 5:</strong> Users make decisions based on insights, and control commands can be sent back to physical assets.'
-        }
-    ];
-
-    let currentStep = 0;
-    const prevBtn = document.getElementById('prevStep');
-    const nextBtn = document.getElementById('nextStep');
-    const stepIndicator = document.getElementById('stepIndicator');
-    const stepDescription = document.getElementById('stepDescription');
-
-    function updateArchitecture() {
-        const step = steps[currentStep];
-        
-        for (let i = 1; i <= 5; i++) {
-            const layer = document.getElementById('layer' + i);
-            const arrow = document.getElementById('arrow' + i);
-            
-            if (step.layers.includes(i)) {
-                layer.classList.add('active');
+    if (viewToggle) {
+        viewToggle.addEventListener('click', function() {
+            isTechnicalView = !isTechnicalView;
+            if (isTechnicalView) {
+                nonTechnical.classList.add('hidden');
+                technical.classList.remove('hidden');
+                viewToggle.textContent = 'Simple View';
             } else {
-                layer.classList.remove('active');
+                nonTechnical.classList.remove('hidden');
+                technical.classList.add('hidden');
+                viewToggle.textContent = 'Technical View';
             }
-            
-            if (arrow) {
-                if (step.arrows.includes(i)) {
-                    arrow.classList.add('active');
-                } else {
-                    arrow.classList.remove('active');
-                }
-            }
-        }
-        
-        stepIndicator.textContent = 'Step ' + (currentStep + 1) + ' of ' + steps.length;
-        stepDescription.innerHTML = '<p>' + step.description + '</p>';
-        
-        prevBtn.disabled = currentStep === 0;
-        nextBtn.disabled = currentStep === steps.length - 1;
+        });
     }
 
-    prevBtn.addEventListener('click', function() {
-        if (currentStep > 0) {
-            currentStep--;
-            updateArchitecture();
+    // ===== FACTORY MACHINE SYNCHRONIZATION =====
+    const physicalTemp = document.getElementById('physicalTemp');
+    const digitalTemp = document.getElementById('digitalTemp');
+    const physicalMotor = document.getElementById('physicalMotor');
+    const digitalMotor = document.getElementById('digitalMotor');
+    const physicalNeedle = document.getElementById('physicalNeedle');
+    const digitalNeedle = document.getElementById('digitalNeedle');
+    const tempSlider = document.getElementById('tempSlider');
+    const speedSlider = document.getElementById('speedSlider');
+    const tempValue = document.getElementById('tempValue');
+    const speedValue = document.getElementById('speedValue');
+    const alertBtn = document.getElementById('alertBtn');
+    const steamContainer = document.getElementById('steamContainer');
+
+    let currentTemp = 25;
+    let currentSpeed = 50;
+    let isAlert = false;
+
+    function updateMachineState() {
+        // Update temperature displays
+        const tempClass = currentTemp > 80 ? 'danger' : currentTemp > 60 ? 'warning' : '';
+        
+        if (physicalTemp) {
+            physicalTemp.textContent = currentTemp + '°C';
+            physicalTemp.className = 'temp-display ' + tempClass;
         }
+        
+        // Sync digital twin with slight delay for realism
+        setTimeout(() => {
+            if (digitalTemp) {
+                digitalTemp.textContent = currentTemp + '°C';
+                digitalTemp.className = 'temp-display ' + tempClass;
+            }
+        }, 200);
+
+        // Update motor speed
+        const spinDuration = Math.max(0.2, 4 - (currentSpeed / 25));
+        if (physicalMotor) {
+            physicalMotor.style.animationDuration = spinDuration + 's';
+        }
+        setTimeout(() => {
+            if (digitalMotor) {
+                digitalMotor.style.animationDuration = spinDuration + 's';
+            }
+        }, 200);
+
+        // Update gauge needles
+        const needleRotation = -45 + (currentSpeed * 0.9);
+        if (physicalNeedle) {
+            physicalNeedle.style.transform = `translateX(-50%) rotate(${needleRotation}deg)`;
+        }
+        setTimeout(() => {
+            if (digitalNeedle) {
+                digitalNeedle.style.transform = `translateX(-50%) rotate(${needleRotation}deg)`;
+            }
+        }, 200);
+
+        // Show steam when hot
+        if (steamContainer) {
+            steamContainer.style.opacity = currentTemp > 60 ? '1' : '0';
+        }
+    }
+
+    // Temperature slider
+    if (tempSlider) {
+        tempSlider.addEventListener('input', function() {
+            currentTemp = parseInt(this.value);
+            if (tempValue) tempValue.textContent = currentTemp + '°C';
+            updateMachineState();
+        });
+    }
+
+    // Speed slider
+    if (speedSlider) {
+        speedSlider.addEventListener('input', function() {
+            currentSpeed = parseInt(this.value);
+            if (speedValue) speedValue.textContent = currentSpeed + '%';
+            updateMachineState();
+        });
+    }
+
+    // Alert simulation
+    if (alertBtn) {
+        alertBtn.addEventListener('click', function() {
+            isAlert = !isAlert;
+            const machines = document.querySelectorAll('.factory-machine');
+            
+            if (isAlert) {
+                // Trigger alert state
+                currentTemp = 95;
+                if (tempSlider) tempSlider.value = 95;
+                if (tempValue) tempValue.textContent = '95°C';
+                
+                machines.forEach(m => {
+                    m.style.animation = 'alertShake 0.5s ease-in-out infinite';
+                });
+                
+                alertBtn.textContent = 'Clear Alert';
+                alertBtn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            } else {
+                // Clear alert
+                currentTemp = 25;
+                if (tempSlider) tempSlider.value = 25;
+                if (tempValue) tempValue.textContent = '25°C';
+                
+                machines.forEach(m => {
+                    m.style.animation = '';
+                });
+                
+                alertBtn.textContent = 'Simulate Alert';
+                alertBtn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
+            }
+            
+            updateMachineState();
+        });
+    }
+
+    // Add alert shake animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes alertShake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+    `;
+    document.head.appendChild(style);
+
+    // Initialize machine state
+    updateMachineState();
+
+    // ===== SMART BUILDING WINDOW ANIMATION =====
+    function animateWindows() {
+        const windows = document.querySelectorAll('.smart-building .window');
+        windows.forEach(w => {
+            if (Math.random() > 0.7) {
+                w.classList.toggle('on');
+            }
+        });
+    }
+    setInterval(animateWindows, 2000);
+
+    // ===== ROLE CARDS INTERACTION =====
+    const roleCards = document.querySelectorAll('.role-card');
+    roleCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            roleCards.forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 
-    nextBtn.addEventListener('click', function() {
-        if (currentStep < steps.length - 1) {
-            currentStep++;
-            updateArchitecture();
-        }
+    // ===== PROCESS FLOW ANIMATION =====
+    const flowSteps = document.querySelectorAll('.flow-step');
+    const runDemoBtn = document.getElementById('runDemo');
+    const resetDemoBtn = document.getElementById('resetDemo');
+    let demoInterval = null;
+    let currentFlowStep = 0;
+
+    function activateStep(index) {
+        flowSteps.forEach((step, i) => {
+            if (i <= index) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
+    }
+
+    function runProcessDemo() {
+        if (demoInterval) clearInterval(demoInterval);
+        currentFlowStep = 0;
+        
+        // Reset all steps
+        flowSteps.forEach(step => step.classList.remove('active'));
+        
+        // Animate through steps
+        demoInterval = setInterval(() => {
+            if (currentFlowStep < flowSteps.length) {
+                activateStep(currentFlowStep);
+                currentFlowStep++;
+            } else {
+                clearInterval(demoInterval);
+                // Flash all steps
+                setTimeout(() => {
+                    flowSteps.forEach(step => {
+                        step.style.transition = 'all 0.3s';
+                        step.style.transform = 'scale(1.05)';
+                    });
+                    setTimeout(() => {
+                        flowSteps.forEach(step => {
+                            step.style.transform = 'scale(1)';
+                        });
+                    }, 300);
+                }, 500);
+            }
+        }, 1000);
+    }
+
+    function resetDemo() {
+        if (demoInterval) clearInterval(demoInterval);
+        currentFlowStep = 0;
+        flowSteps.forEach(step => step.classList.remove('active'));
+    }
+
+    if (runDemoBtn) {
+        runDemoBtn.addEventListener('click', runProcessDemo);
+    }
+
+    if (resetDemoBtn) {
+        resetDemoBtn.addEventListener('click', resetDemo);
+    }
+
+    // Auto-run demo on scroll into view
+    const howSection = document.getElementById('how');
+    let hasRunDemo = false;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasRunDemo) {
+                hasRunDemo = true;
+                setTimeout(runProcessDemo, 500);
+            }
+        });
+    }, { threshold: 0.3 });
+
+    if (howSection) {
+        observer.observe(howSection);
+    }
+
+    // ===== BENEFIT CARDS HOVER EFFECTS =====
+    const benefitDemos = document.querySelectorAll('.benefit-demo');
+    benefitDemos.forEach(demo => {
+        demo.addEventListener('mouseenter', function() {
+            const animation = this.querySelector('.benefit-animation');
+            if (animation) {
+                animation.style.transform = 'scale(1.1)';
+            }
+        });
+        demo.addEventListener('mouseleave', function() {
+            const animation = this.querySelector('.benefit-animation');
+            if (animation) {
+                animation.style.transform = 'scale(1)';
+            }
+        });
     });
 
-    updateArchitecture();
+    // ===== INDUSTRY CARDS INTERACTION =====
+    const industryCards = document.querySelectorAll('.industry-card');
+    industryCards.forEach(card => {
+        card.addEventListener('click', function() {
+            const industry = this.dataset.industry;
+            
+            // Add click feedback
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'translateY(-5px)';
+            }, 150);
+            
+            // Could expand to show more details
+            console.log('Selected industry:', industry);
+        });
+    });
 
-    // Smooth scrolling for nav links
+    // ===== SMOOTH SCROLLING =====
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -131,4 +298,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // ===== PARALLAX EFFECT ON SCROLL =====
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        const header = document.querySelector('header');
+        if (header) {
+            header.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        }
+    });
+
+    // ===== RANDOM DATA PACKET ANIMATION =====
+    function randomizePackets() {
+        const packets = document.querySelectorAll('.data-packet');
+        packets.forEach((packet, i) => {
+            const delay = Math.random() * 2;
+            packet.style.animationDelay = delay + 's';
+        });
+    }
+    setInterval(randomizePackets, 6000);
+
+    // ===== SENSOR DOT PULSE SYNC =====
+    function syncSensorPulse() {
+        const sensors = document.querySelectorAll('.sensor-dot');
+        sensors.forEach((sensor, i) => {
+            sensor.style.animationDelay = (i * 0.2) + 's';
+        });
+    }
+    syncSensorPulse();
+
+    console.log('Digital Twin Fundamentals Demo Loaded Successfully!');
 });

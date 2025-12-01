@@ -1,50 +1,100 @@
+// DualTwin 360 - Interactive Demo
 document.addEventListener('DOMContentLoaded', function() {
+    // View Toggle
     const viewToggle = document.getElementById('viewToggle');
     const nonTechnical = document.querySelector('.non-technical');
     const technical = document.querySelector('.technical');
     let isTechnicalView = false;
 
-    if (viewToggle && nonTechnical && technical) {
+    if (viewToggle) {
         viewToggle.addEventListener('click', function() {
             isTechnicalView = !isTechnicalView;
             if (isTechnicalView) {
-                nonTechnical.classList.add('hidden');
-                technical.classList.remove('hidden');
+                if (nonTechnical) nonTechnical.classList.add('hidden');
+                if (technical) technical.classList.remove('hidden');
                 viewToggle.textContent = 'Simple View';
             } else {
-                nonTechnical.classList.remove('hidden');
-                technical.classList.add('hidden');
+                if (nonTechnical) nonTechnical.classList.remove('hidden');
+                if (technical) technical.classList.add('hidden');
                 viewToggle.textContent = 'Technical View';
             }
         });
     }
 
-    const steps = [
-        '<strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.',
-        '<strong>Step 2:</strong> Data is processed and synchronized with the digital twin model.',
-        '<strong>Step 3:</strong> Analytics and insights are generated for decision-making.'
-    ];
-
+    // Process Flow Animation
+    const flowSteps = document.querySelectorAll('.flow-step');
+    const runBtn = document.getElementById('runDemo') || document.getElementById('runCommDemo');
+    const resetBtn = document.getElementById('resetDemo') || document.getElementById('resetCommDemo');
+    let demoInterval = null;
     let currentStep = 0;
-    const prevBtn = document.getElementById('prevStep');
-    const nextBtn = document.getElementById('nextStep');
-    const stepIndicator = document.getElementById('stepIndicator');
-    const stepDescription = document.getElementById('stepDescription');
 
-    function updateStep() {
-        if (stepIndicator) stepIndicator.textContent = 'Step ' + (currentStep + 1) + ' of ' + steps.length;
-        if (stepDescription) stepDescription.innerHTML = '<p>' + steps[currentStep] + '</p>';
-        if (prevBtn) prevBtn.disabled = currentStep === 0;
-        if (nextBtn) nextBtn.disabled = currentStep === steps.length - 1;
+    function activateStep(index) {
+        flowSteps.forEach((step, i) => {
+            if (i <= index) {
+                step.classList.add('active');
+            } else {
+                step.classList.remove('active');
+            }
+        });
     }
 
-    if (prevBtn) prevBtn.addEventListener('click', function() {
-        if (currentStep > 0) { currentStep--; updateStep(); }
+    function runDemo() {
+        if (demoInterval) clearInterval(demoInterval);
+        currentStep = 0;
+        flowSteps.forEach(step => step.classList.remove('active'));
+        
+        demoInterval = setInterval(() => {
+            if (currentStep < flowSteps.length) {
+                activateStep(currentStep);
+                currentStep++;
+            } else {
+                clearInterval(demoInterval);
+            }
+        }, 800);
+    }
+
+    function resetDemo() {
+        if (demoInterval) clearInterval(demoInterval);
+        currentStep = 0;
+        flowSteps.forEach(step => step.classList.remove('active'));
+    }
+
+    if (runBtn) runBtn.addEventListener('click', runDemo);
+    if (resetBtn) resetBtn.addEventListener('click', resetDemo);
+
+    // Auto-run on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && flowSteps.length > 0) {
+                setTimeout(runDemo, 500);
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.3 });
+
+    const howSection = document.getElementById('how');
+    if (howSection) observer.observe(howSection);
+
+    // Card hover effects
+    document.querySelectorAll('.benefit-card, .card-item, .industry-slide').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = '';
+        });
     });
 
-    if (nextBtn) nextBtn.addEventListener('click', function() {
-        if (currentStep < steps.length - 1) { currentStep++; updateStep(); }
+    // Smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
     });
 
-    updateStep();
+    console.log('DualTwin 360 Demo Loaded!');
 });
