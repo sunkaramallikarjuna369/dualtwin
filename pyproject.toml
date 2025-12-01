@@ -1,0 +1,76 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dualtwin360"
+version = "1.0.0"
+description = "DualTwin Technologies 360° - Digital Twin & Dual-Twin Concepts Repository"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "DualTwin Technologies", email = "contact@dualtwin.tech"}
+]
+keywords = ["digital-twin", "dual-twin", "iot", "simulation", "industry4.0"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "scipy>=1.10.0",
+    "matplotlib>=3.7.0",
+    "plotly>=5.14.0",
+    "seaborn>=0.12.0",
+    "jupyterlab>=4.0.0",
+    "notebook>=7.0.0",
+    "ipywidgets>=8.0.0",
+    "scikit-learn>=1.3.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.22.0",
+    "pydantic>=2.0.0",
+    "pyyaml>=6.0.0",
+    "python-dotenv>=1.0.0",
+    "simpy>=4.0.0",
+    "aiohttp>=3.8.0",
+    "pytest>=7.3.0",
+    "requests>=2.31.0",
+    "python-dateutil>=2.8.0",
+    "tqdm>=4.65.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.0.0",
+    "mypy>=1.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sunkaramallikarjuna369/dualtwin"
+Documentation = "https://github.com/sunkaramallikarjuna369/dualtwin#readme"
+Repository = "https://github.com/sunkaramallikarjuna369/dualtwin"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["common*", "concepts*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310', 'py311', 'py312']
+
+[tool.isort]
+profile = "black"
+line_length = 100

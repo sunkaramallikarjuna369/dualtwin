@@ -1,0 +1,344 @@
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --accent-color: #3b82f6;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-color: #1e293b;
+    --text-light: #64748b;
+    --border-color: #e2e8f0;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 1rem 2rem 3rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+.view-toggle {
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.view-toggle:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    opacity: 0.9;
+    font-size: 1.2rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section {
+    background: var(--card-background);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.diagram {
+    grid-column: 1 / -1;
+    margin-top: 2rem;
+}
+
+.twin-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: var(--background-color);
+    border-radius: 8px;
+}
+
+.physical-side, .digital-side {
+    text-align: center;
+}
+
+.asset, .twin {
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    min-width: 200px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.asset:hover, .twin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.asset .icon, .twin .icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.asset {
+    border-color: var(--success-color);
+}
+
+.twin {
+    border-color: var(--primary-color);
+}
+
+.sensor-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+}
+
+.data-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
+}
+
+.arrow-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-card {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.industries-container, .roles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.industry-item, .role-card {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.industry-icon, .role-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.architecture-demo {
+    text-align: center;
+}
+
+.step-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.step-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.step-btn:hover {
+    background: var(--secondary-color);
+}
+
+.step-btn:disabled {
+    background: var(--text-light);
+    cursor: not-allowed;
+}
+
+.architecture-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.arch-layer {
+    opacity: 0.3;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.arch-layer.active {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.layer-box {
+    background: var(--card-background);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    min-width: 250px;
+}
+
+.layer-box.sensors { border-color: var(--success-color); }
+.layer-box.ingestion { border-color: var(--warning-color); }
+.layer-box.platform { border-color: var(--primary-color); }
+.layer-box.visualization { border-color: var(--accent-color); }
+.layer-box.action { border-color: var(--danger-color); }
+
+.arch-arrow {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    opacity: 0.3;
+    transition: opacity 0.5s;
+}
+
+.arch-arrow.active {
+    opacity: 1;
+    color: var(--primary-color);
+}
+
+.step-description {
+    background: var(--background-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+footer {
+    background: var(--text-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .content-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .twin-visual {
+        flex-direction: column;
+    }
+    
+    .data-flow {
+        transform: rotate(90deg);
+    }
+}

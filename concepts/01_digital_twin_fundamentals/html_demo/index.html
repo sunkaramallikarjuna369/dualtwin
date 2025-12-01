@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Fundamentals - DualTwin 360</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">DualTwin 360</div>
+            <div class="nav-links">
+                <a href="#what">What</a>
+                <a href="#why">Why</a>
+                <a href="#where">Where</a>
+                <a href="#who">Who</a>
+                <a href="#how">How</a>
+            </div>
+            <button id="viewToggle" class="view-toggle">Technical View</button>
+        </nav>
+        <h1>01 - Digital Twin Fundamentals</h1>
+        <p class="subtitle">Understanding the virtual mirror of physical systems</p>
+    </header>
+
+    <main>
+        <section id="what" class="section">
+            <h2>What is a Digital Twin?</h2>
+            <div class="content-wrapper">
+                <div class="non-technical">
+                    <h3>Simple Explanation</h3>
+                    <p>Imagine having a detailed, living model of your car on your phone. This model knows everything about your actual car - how fast it's going, fuel level, engine temperature, and even when parts might need replacement.</p>
+                    <p>When something changes in your real car, the model updates automatically. This virtual copy is a <strong>digital twin</strong>.</p>
+                </div>
+                <div class="technical hidden">
+                    <h3>Technical Definition</h3>
+                    <p>A <strong>Digital Twin</strong> is a dynamic, virtual representation of a physical entity (asset, process, or system) that is synchronized with its real-world counterpart through continuous data exchange.</p>
+                    <p>Key characteristics include bidirectional data flow, real-time synchronization, simulation capability, and lifecycle persistence.</p>
+                </div>
+                <div class="diagram">
+                    <div class="twin-visual">
+                        <div class="physical-side">
+                            <div class="asset" id="physicalAsset">
+                                <span class="icon">&#9881;</span>
+                                <span class="label">Physical Asset</span>
+                                <div class="sensor-value" id="physicalValue">25°C</div>
+                            </div>
+                        </div>
+                        <div class="data-flow">
+                            <div class="arrow" id="dataArrow">
+                                <span class="arrow-label">Data Flow</span>
+                            </div>
+                        </div>
+                        <div class="digital-side">
+                            <div class="twin" id="digitalTwin">
+                                <span class="icon">&#128187;</span>
+                                <span class="label">Digital Twin</span>
+                                <div class="sensor-value" id="twinValue">25°C</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why" class="section">
+            <h2>Why Digital Twins Matter</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128065;</div>
+                    <h3>Visibility</h3>
+                    <p>See what's happening with your assets in real-time from anywhere</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128200;</div>
+                    <h3>Analytics</h3>
+                    <p>Understand trends and patterns from historical data</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128302;</div>
+                    <h3>Prediction</h3>
+                    <p>Anticipate problems before they occur</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128176;</div>
+                    <h3>Cost Savings</h3>
+                    <p>Reduce maintenance costs and downtime</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="where" class="section">
+            <h2>Where Digital Twins Are Used</h2>
+            <div class="industries-container">
+                <div class="industry-item">
+                    <div class="industry-icon">&#127981;</div>
+                    <h3>Manufacturing</h3>
+                    <p>Production lines, CNC machines, quality control</p>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon">&#9889;</div>
+                    <h3>Energy</h3>
+                    <p>Wind turbines, power plants, solar farms</p>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon">&#127970;</div>
+                    <h3>Buildings</h3>
+                    <p>HVAC systems, elevators, smart buildings</p>
+                </div>
+                <div class="industry-item">
+                    <div class="industry-icon">&#128663;</div>
+                    <h3>Transportation</h3>
+                    <p>Aircraft, ships, vehicle fleets</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="who" class="section">
+            <h2>Who Uses Digital Twins</h2>
+            <div class="roles-container">
+                <div class="role-card">
+                    <div class="role-icon">&#128119;</div>
+                    <h3>Operators</h3>
+                    <p>Monitor equipment status and receive alerts</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#128736;</div>
+                    <h3>Engineers</h3>
+                    <p>Diagnose problems and optimize performance</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#128202;</div>
+                    <h3>Data Scientists</h3>
+                    <p>Build analytics and predictive models</p>
+                </div>
+                <div class="role-card">
+                    <div class="role-icon">&#128188;</div>
+                    <h3>Managers</h3>
+                    <p>Track KPIs and make strategic decisions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="how" class="section">
+            <h2>How Digital Twins Work</h2>
+            <div class="architecture-demo">
+                <div class="step-container">
+                    <button id="prevStep" class="step-btn">&larr; Previous</button>
+                    <span id="stepIndicator">Step 1 of 5</span>
+                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+                </div>
+                <div class="architecture-visual">
+                    <div class="arch-layer" id="layer1">
+                        <div class="layer-box sensors">
+                            <h4>Physical World</h4>
+                            <p>Sensors collect data</p>
+                        </div>
+                    </div>
+                    <div class="arch-arrow" id="arrow1">&darr;</div>
+                    <div class="arch-layer" id="layer2">
+                        <div class="layer-box ingestion">
+                            <h4>Data Ingestion</h4>
+                            <p>IoT gateway processes data</p>
+                        </div>
+                    </div>
+                    <div class="arch-arrow" id="arrow2">&darr;</div>
+                    <div class="arch-layer" id="layer3">
+                        <div class="layer-box platform">
+                            <h4>Twin Platform</h4>
+                            <p>Model, analytics, simulation</p>
+                        </div>
+                    </div>
+                    <div class="arch-arrow" id="arrow3">&darr;</div>
+                    <div class="arch-layer" id="layer4">
+                        <div class="layer-box visualization">
+                            <h4>Visualization</h4>
+                            <p>Dashboards and alerts</p>
+                        </div>
+                    </div>
+                    <div class="arch-arrow" id="arrow4">&darr;</div>
+                    <div class="arch-layer" id="layer5">
+                        <div class="layer-box action">
+                            <h4>Action</h4>
+                            <p>Decisions and control</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="step-description" id="stepDescription">
+                    <p><strong>Step 1:</strong> Sensors on physical assets collect real-time data about temperature, pressure, vibration, and other parameters.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../02_dual_twin_architecture/html_demo/index.html">Next: Dual-Twin Architecture &rarr;</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
