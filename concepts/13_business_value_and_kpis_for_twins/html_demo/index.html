@@ -19,107 +19,232 @@
             </div>
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
-        <h1>13 - Business Value and KPIs</h1>
-        <p class="subtitle">Understanding business value and kpis in digital twin systems</p>
+        <h1>13 - Business Value & KPIs</h1>
+        <p class="subtitle">Proving your twin pays for itself</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
-            <h2>What is Business Value and KPIs?</h2>
-            <div class="content-wrapper">
+            <h2>What is Business Value & KPIs for Twins?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Measuring whether your digital twin investment is paying off.</p>
+                    <p>Your CFO asks: <strong>"Is this twin worth the money?"</strong> Business value is the answer - measured in dollars saved, revenue gained, or risks avoided. KPIs (Key Performance Indicators) are the specific numbers you track to prove it.</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Metrics and methodologies for measuring ROI, efficiency gains, and business impact of digital twin investments.</p>
+                    <p>Quantitative and qualitative metrics for measuring digital twin ROI, including Total Cost of Ownership (TCO), Net Present Value (NPV), payback period, OEE improvement, MTBF/MTTR changes, energy savings, and quality yield improvements. Requires baseline measurement and attribution methodology.</p>
+                </div>
+            </div>
+            
+            <!-- ROI Dashboard Demo -->
+            <div class="animation-container">
+                <h3>Twin ROI Dashboard</h3>
+                <div class="roi-demo">
+                    <!-- Value Gauges -->
+                    <div class="value-gauges">
+                        <div class="gauge">
+                            <div class="gauge-value">$2.4M</div>
+                            <div class="gauge-label">Annual Savings</div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="gauge">
+                            <div class="gauge-value">287%</div>
+                            <div class="gauge-label">ROI (3-year)</div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="gauge">
+                            <div class="gauge-value">14 mo</div>
+                            <div class="gauge-label">Payback Period</div>
+                            <div class="gauge-bar">
+                                <div class="gauge-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Value Breakdown -->
+                    <div class="value-breakdown">
+                        <h4>Where Value Comes From</h4>
+                        <div class="value-item">
+                            <span class="value-category">Reduced Downtime</span>
+                            <span class="value-amount">$1.2M</span>
+                            <div class="value-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-category">Energy Savings</span>
+                            <span class="value-amount">$600K</span>
+                            <div class="value-bar" style="width: 25%"></div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-category">Quality Improvement</span>
+                            <span class="value-amount">$400K</span>
+                            <div class="value-bar" style="width: 17%"></div>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-category">Labor Efficiency</span>
+                            <span class="value-amount">$200K</span>
+                            <div class="value-bar" style="width: 8%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ROI Calculator -->
+                <div class="roi-calculator">
+                    <h4>Quick ROI Calculator</h4>
+                    <div class="calc-inputs">
+                        <div class="calc-input">
+                            <label>Twin Investment: $<span id="investmentValue">500</span>K</label>
+                            <input type="range" id="investmentSlider" min="100" max="2000" value="500">
+                        </div>
+                        <div class="calc-input">
+                            <label>Annual Savings: $<span id="savingsValue">800</span>K</label>
+                            <input type="range" id="savingsSlider" min="100" max="3000" value="800">
+                        </div>
+                    </div>
+                    <div class="calc-result">
+                        <span class="result-label">Payback Period:</span>
+                        <span class="result-value" id="paybackResult">7.5 months</span>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to Business Value -->
         <section id="why" class="section">
-            <h2>Why Business Value and KPIs Matters</h2>
+            <h2>Why Measuring Value is Essential</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
-                </div>
-                <div class="benefit-card">
                     <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <h3>Justify Investment</h3>
+                    <p>Get budget approval by showing clear ROI projections backed by data</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#128200;</div>
+                    <h3>Track Progress</h3>
+                    <p>Know if your twin is delivering promised value - or falling short</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#127919;</div>
+                    <h3>Prioritize Features</h3>
+                    <p>Focus development on capabilities that drive the most value</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128640;</div>
+                    <h3>Scale with Confidence</h3>
+                    <p>Proven ROI from pilot makes it easy to expand to more assets</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific to Business Value -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where Value is Measured</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#9881;</span>
+                    <h3>Maintenance Costs</h3>
+                    <p>Track reduction in unplanned downtime, spare parts inventory, emergency repairs</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#9889;</span>
+                    <h3>Energy Consumption</h3>
+                    <p>Measure kWh savings from optimized operations and reduced waste</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128200;</span>
+                    <h3>Production Output</h3>
+                    <p>OEE improvement, throughput increase, cycle time reduction</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128176;</span>
+                    <h3>Quality & Yield</h3>
+                    <p>Defect reduction, first-pass yield improvement, scrap reduction</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to Business Value -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
+            <h2>Who Cares About Twin ROI</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128176;</span>
+                    <h3>CFO / Finance</h3>
+                    <p>Needs hard numbers: NPV, IRR, payback period to approve capital</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128188;</span>
+                    <h3>Business Sponsors</h3>
+                    <p>Champion the project - need proof to maintain executive support</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
+                    <h3>Operations Leaders</h3>
+                    <p>Want to see KPIs improving: OEE, MTBF, energy per unit</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>IT/OT Leaders</h3>
+                    <p>Need to justify platform costs and ongoing maintenance</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to Business Value -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How to Measure Twin Value</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128202;</span>
+                    <h4>Baseline Metrics</h4>
+                    <p>Measure current state: downtime, energy, quality before twin</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#127919;</span>
+                    <h4>Define Targets</h4>
+                    <p>Set specific, measurable goals: "Reduce downtime 30%"</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#128269;</span>
+                    <h4>Track Continuously</h4>
+                    <p>Monitor KPIs in real-time through twin dashboards</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128176;</span>
+                    <h4>Calculate Value</h4>
+                    <p>Convert improvements to dollars: hours saved x cost/hour</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128221;</span>
+                    <h4>Report & Iterate</h4>
+                    <p>Share results with stakeholders, adjust strategy</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch Value Tracking</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../12_governance_compliance_and_standards/html_demo/index.html">&larr; Previous: Governance</a> | 
+           <a href="../14_future_trends/html_demo/index.html">Next: Future Trends &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

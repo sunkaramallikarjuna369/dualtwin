@@ -20,106 +20,221 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>04 - Data Models and Semantics</h1>
-        <p class="subtitle">Understanding data models and semantics in digital twin systems</p>
+        <p class="subtitle">Giving meaning and structure to your twin's data</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
-            <h2>What is Data Models and Semantics?</h2>
-            <div class="content-wrapper">
+            <h2>What are Data Models & Semantics?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Just like a dictionary defines words, data models define what information means in your digital twin system.</p>
+                    <p>Imagine a <strong>universal translator</strong> for machines. When one system says "temp=72" and another says "temperature_celsius=22", data models help everyone understand they're talking about the same thing - just in different languages!</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Formal structures that define the schema, relationships, and meaning of data within digital twin systems, often using ontologies and semantic web technologies.</p>
+                    <p>Data models define the schema, entities, attributes, and relationships within a digital twin. Semantics add meaning through ontologies (like RDF/OWL), enabling machines to understand context, units, and relationships between data points.</p>
+                </div>
+            </div>
+            
+            <!-- Data Model Visualization -->
+            <div class="animation-container">
+                <h3>See How Data Gets Organized</h3>
+                <div class="data-model-demo">
+                    <!-- Raw Data Side -->
+                    <div class="raw-data-panel">
+                        <h4>Raw Sensor Data (Messy)</h4>
+                        <div class="raw-data-box">
+                            <code>{"t": 72, "unit": "?"}</code>
+                            <code>{"temp_c": 22.2}</code>
+                            <code>{"TEMPERATURE": "295K"}</code>
+                            <code>{"reading": 72, "type": "temp"}</code>
+                        </div>
+                        <p class="data-problem">Different formats, unclear meaning</p>
+                    </div>
+                    
+                    <!-- Transformation Arrow -->
+                    <div class="transform-arrow">
+                        <span class="arrow-icon">&#8594;</span>
+                        <span class="arrow-label">Data Model Applied</span>
+                    </div>
+                    
+                    <!-- Structured Data Side -->
+                    <div class="structured-data-panel">
+                        <h4>Semantic Model (Clear)</h4>
+                        <div class="entity-diagram">
+                            <div class="entity-box main-entity">
+                                <div class="entity-header">TemperatureSensor</div>
+                                <div class="entity-field">id: "TEMP-001"</div>
+                                <div class="entity-field">value: 22.2</div>
+                                <div class="entity-field">unit: "Celsius"</div>
+                                <div class="entity-field">location: "Zone-A"</div>
+                                <div class="entity-field">timestamp: ISO8601</div>
+                            </div>
+                        </div>
+                        <p class="data-solution">Consistent, meaningful, queryable</p>
+                    </div>
+                </div>
+                
+                <!-- Entity Relationship Demo -->
+                <div class="relationship-demo">
+                    <h4>How Entities Connect</h4>
+                    <div class="entity-network">
+                        <div class="entity-node" data-type="asset">
+                            <span class="node-icon">&#9881;</span>
+                            <span class="node-label">Pump_123</span>
+                        </div>
+                        <div class="relationship-line" data-rel="has">
+                            <span>has</span>
+                        </div>
+                        <div class="entity-node" data-type="sensor">
+                            <span class="node-icon">&#128225;</span>
+                            <span class="node-label">TempSensor_A</span>
+                        </div>
+                        <div class="relationship-line" data-rel="located">
+                            <span>located_in</span>
+                        </div>
+                        <div class="entity-node" data-type="location">
+                            <span class="node-icon">&#128205;</span>
+                            <span class="node-label">Building_1</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to Data Models -->
         <section id="why" class="section">
-            <h2>Why Data Models and Semantics Matters</h2>
+            <h2>Why Data Models Matter for Twins</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128257;</div>
+                    <h3>Interoperability</h3>
+                    <p>Different systems can share and understand each other's data without custom translations</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <div class="benefit-icon">&#128269;</div>
+                    <h3>Queryability</h3>
+                    <p>Ask questions like "Show all pumps with temperature above 80C" across your entire twin</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#128736;</div>
+                    <h3>Maintainability</h3>
+                    <p>When you add new equipment, the model tells you exactly what data to capture</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#129302;</div>
+                    <h3>AI-Ready</h3>
+                    <p>Machine learning models need consistent, well-labeled data to learn effectively</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific examples -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where Data Models Are Critical</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#127981;</span>
+                    <h3>Multi-Vendor Factories</h3>
+                    <p>Siemens PLCs + ABB robots + custom sensors all speaking different data languages</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127970;</span>
+                    <h3>Smart Building Portfolios</h3>
+                    <p>100 buildings with different BMS vendors need unified energy reporting</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128663;</span>
+                    <h3>Fleet Management</h3>
+                    <p>Trucks from different manufacturers reporting telemetry in different formats</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127973;</span>
+                    <h3>Healthcare Networks</h3>
+                    <p>Medical devices from 50 vendors must share patient data safely</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific roles for data modeling -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
+            <h2>Who Works with Data Models</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128209;</span>
+                    <h3>Data Architects</h3>
+                    <p>Design the overall schema and entity relationships</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>Integration Engineers</h3>
+                    <p>Map vendor-specific data to the common model</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128218;</span>
+                    <h3>Domain Experts</h3>
+                    <p>Define what attributes matter (e.g., "pumps need flow rate, not just temperature")</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
+                    <h3>Analytics Teams</h3>
+                    <p>Consume the structured data for dashboards and ML models</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to data modeling -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How to Build a Twin Data Model</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128221;</span>
+                    <h4>Inventory Assets</h4>
+                    <p>List all equipment types and their data sources</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128209;</span>
+                    <h4>Define Entities</h4>
+                    <p>Create classes: Asset, Sensor, Location, Process</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#128279;</span>
+                    <h4>Map Relationships</h4>
+                    <p>Pump "has" Sensor, Sensor "located_in" Zone</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128295;</span>
+                    <h4>Add Semantics</h4>
+                    <p>Units, ranges, descriptions for each attribute</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128260;</span>
+                    <h4>Transform Data</h4>
+                    <p>Map incoming raw data to your model</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch the Process</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../03_iot_and_sensor_data_streams/html_demo/index.html">&larr; Previous: IoT & Sensors</a> | 
+           <a href="../05_simulation_and_physics_models/html_demo/index.html">Next: Simulation Models &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

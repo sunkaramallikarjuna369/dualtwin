@@ -20,106 +20,226 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>09 - GenAI with Digital Twins</h1>
-        <p class="subtitle">Understanding genai with digital twins in digital twin systems</p>
+        <p class="subtitle">Talk to your twin like talking to a colleague</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
             <h2>What is GenAI with Digital Twins?</h2>
-            <div class="content-wrapper">
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Using AI that can generate reports, answer questions, and explore scenarios in natural language.</p>
+                    <p>Imagine asking your twin questions in plain English: <strong>"Why did Pump 3 fail last Tuesday?"</strong> or <strong>"Write me a report on energy usage this month."</strong> GenAI is the translator that understands your questions and finds answers in the twin's data.</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Integration of generative AI capabilities for natural language interfaces, automated reporting, and scenario exploration.</p>
+                    <p>Large Language Models (LLMs) integrated with digital twin data through RAG (Retrieval-Augmented Generation), function calling, and knowledge graphs. Enables natural language queries, automated report generation, and conversational scenario exploration grounded in twin data.</p>
+                </div>
+            </div>
+            
+            <!-- Chat Interface Demo -->
+            <div class="animation-container">
+                <h3>Chat with Your Twin</h3>
+                <div class="chat-demo">
+                    <div class="chat-window">
+                        <div class="chat-message user">
+                            <span class="message-icon">&#128100;</span>
+                            <div class="message-content">Why is Pump P-101 running hot today?</div>
+                        </div>
+                        <div class="chat-message assistant">
+                            <span class="message-icon">&#129302;</span>
+                            <div class="message-content">
+                                <p>Based on twin data, Pump P-101 is running at 78°C (normal: 65°C). I found 3 contributing factors:</p>
+                                <ol>
+                                    <li>Ambient temperature is 5°C higher than usual</li>
+                                    <li>Flow rate increased 15% at 10:30 AM</li>
+                                    <li>Cooling water valve V-23 is only 60% open</li>
+                                </ol>
+                                <p><strong>Recommendation:</strong> Open V-23 to 80% to reduce temperature.</p>
+                            </div>
+                        </div>
+                        <div class="chat-message user">
+                            <span class="message-icon">&#128100;</span>
+                            <div class="message-content">Generate a maintenance report for this week</div>
+                        </div>
+                        <div class="chat-message assistant typing">
+                            <span class="message-icon">&#129302;</span>
+                            <div class="message-content">
+                                <span class="typing-indicator">Generating report...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sample Questions -->
+                    <div class="sample-questions">
+                        <h4>Try asking:</h4>
+                        <button class="question-btn">"What caused the alarm at 3pm?"</button>
+                        <button class="question-btn">"Compare this month to last month"</button>
+                        <button class="question-btn">"What if we increase production 20%?"</button>
+                    </div>
+                </div>
+                
+                <!-- Knowledge Grounding Demo -->
+                <div class="grounding-demo">
+                    <h4>How GenAI Stays Accurate (RAG)</h4>
+                    <div class="rag-flow">
+                        <div class="rag-step">
+                            <span class="rag-icon">&#128172;</span>
+                            <span class="rag-label">Your Question</span>
+                        </div>
+                        <span class="rag-arrow">&#8594;</span>
+                        <div class="rag-step">
+                            <span class="rag-icon">&#128269;</span>
+                            <span class="rag-label">Search Twin Data</span>
+                        </div>
+                        <span class="rag-arrow">&#8594;</span>
+                        <div class="rag-step">
+                            <span class="rag-icon">&#128196;</span>
+                            <span class="rag-label">Retrieve Context</span>
+                        </div>
+                        <span class="rag-arrow">&#8594;</span>
+                        <div class="rag-step">
+                            <span class="rag-icon">&#129302;</span>
+                            <span class="rag-label">Generate Answer</span>
+                        </div>
+                    </div>
+                    <p class="grounding-note">GenAI answers are grounded in YOUR twin's actual data - not generic internet knowledge</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to GenAI -->
         <section id="why" class="section">
-            <h2>Why GenAI with Digital Twins Matters</h2>
+            <h2>Why GenAI Changes Everything</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128172;</div>
+                    <h3>Natural Language Access</h3>
+                    <p>No SQL, no dashboards - just ask questions in plain English</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <div class="benefit-icon">&#128196;</div>
+                    <h3>Auto-Generated Reports</h3>
+                    <p>"Write a shift handover report" - done in seconds, not hours</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#128161;</div>
+                    <h3>Scenario Exploration</h3>
+                    <p>"What if we run at 110% capacity?" - explore without risk</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#127891;</div>
+                    <h3>Knowledge Democratization</h3>
+                    <p>Everyone can query the twin - not just data experts</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific to GenAI -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where GenAI Twins Excel</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128221;</span>
+                    <h3>Shift Handovers</h3>
+                    <p>"Summarize what happened on night shift" - instant context for incoming operators</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128269;</span>
+                    <h3>Root Cause Investigation</h3>
+                    <p>"Why did we have 3 alarms yesterday?" - AI traces through data to explain</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
+                    <h3>Executive Summaries</h3>
+                    <p>"Give me a one-page summary for the board meeting" - auto-generated</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127891;</span>
+                    <h3>Training & Onboarding</h3>
+                    <p>New operators ask questions and learn from the twin's knowledge</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to GenAI -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
+            <h2>Who Benefits from GenAI Twins</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128119;</span>
                     <h3>Operators</h3>
+                    <p>Ask "Why is this alarm happening?" instead of digging through logs</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
-                </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
-                </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
+                <div class="card-item">
+                    <span class="card-icon">&#128188;</span>
                     <h3>Managers</h3>
+                    <p>Get instant reports and summaries without waiting for analysts</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-icon">&#128736;</span>
+                    <h3>Engineers</h3>
+                    <p>Explore "what-if" scenarios through conversation</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>AI Engineers</h3>
+                    <p>Build RAG pipelines, prompt engineering, fine-tuning for domain</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to GenAI -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How GenAI Integrates with Twins</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128202;</span>
+                    <h4>Index Twin Data</h4>
+                    <p>Create embeddings of historical data, manuals, and events</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128172;</span>
+                    <h4>User Asks Question</h4>
+                    <p>Natural language query through chat interface</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#128269;</span>
+                    <h4>RAG Retrieval</h4>
+                    <p>Find relevant twin data chunks for context</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#129302;</span>
+                    <h4>LLM Generates</h4>
+                    <p>GPT/Claude generates answer grounded in twin data</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128221;</span>
+                    <h4>Cite Sources</h4>
+                    <p>Show which twin data points support the answer</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch RAG in Action</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../08_ai_and_analytics_on_twins/html_demo/index.html">&larr; Previous: AI & Analytics</a> | 
+           <a href="../10_twin_security_and_access_control/html_demo/index.html">Next: Security & Access &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

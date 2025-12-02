@@ -19,107 +19,227 @@
             </div>
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
-        <h1>10 - Twin Security and Access Control</h1>
-        <p class="subtitle">Understanding twin security and access control in digital twin systems</p>
+        <h1>10 - Twin Security & Access Control</h1>
+        <p class="subtitle">Protecting your twin from unauthorized access</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
-            <h2>What is Twin Security and Access Control?</h2>
-            <div class="content-wrapper">
+            <h2>What is Twin Security & Access Control?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Protecting your digital twin like you would protect your home - with locks, alarms, and access controls.</p>
+                    <p>Your digital twin knows everything about your factory - production rates, equipment health, even trade secrets. <strong>Security</strong> ensures only the right people can see the right data. An operator sees machine status; a competitor sees nothing.</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Security frameworks including authentication, authorization, encryption, and audit logging for digital twin systems.</p>
+                    <p>Security architecture including authentication (OAuth2, SAML), authorization (RBAC, ABAC), encryption (TLS, AES-256), audit logging, and zero-trust principles applied to digital twin platforms. Covers data-at-rest, data-in-transit, and API security.</p>
+                </div>
+            </div>
+            
+            <!-- Security Shield Demo -->
+            <div class="animation-container">
+                <h3>See Security in Action</h3>
+                <div class="security-demo">
+                    <!-- Twin with Shield -->
+                    <div class="twin-shield">
+                        <div class="shield-icon">&#128737;</div>
+                        <div class="twin-core">
+                            <span class="twin-label">Digital Twin</span>
+                            <div class="data-items">
+                                <span class="data-item sensitive">Production Data</span>
+                                <span class="data-item sensitive">Equipment Health</span>
+                                <span class="data-item public">Public Status</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Access Attempts -->
+                    <div class="access-panel">
+                        <h4>Access Attempts</h4>
+                        <div class="access-attempt granted">
+                            <span class="user-icon">&#128119;</span>
+                            <span class="user-name">Operator John</span>
+                            <span class="access-result">&#9989; View Machine Status</span>
+                        </div>
+                        <div class="access-attempt granted">
+                            <span class="user-icon">&#128736;</span>
+                            <span class="user-name">Engineer Sarah</span>
+                            <span class="access-result">&#9989; Edit Setpoints</span>
+                        </div>
+                        <div class="access-attempt denied">
+                            <span class="user-icon">&#128100;</span>
+                            <span class="user-name">Unknown User</span>
+                            <span class="access-result">&#10060; Access Denied</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- RBAC Demo -->
+                <div class="rbac-demo">
+                    <h4>Role-Based Access Control (RBAC)</h4>
+                    <div class="rbac-table">
+                        <div class="rbac-header">
+                            <span class="rbac-cell">Role</span>
+                            <span class="rbac-cell">View Data</span>
+                            <span class="rbac-cell">Edit Setpoints</span>
+                            <span class="rbac-cell">Admin</span>
+                        </div>
+                        <div class="rbac-row">
+                            <span class="rbac-cell">Operator</span>
+                            <span class="rbac-cell">&#9989;</span>
+                            <span class="rbac-cell">&#10060;</span>
+                            <span class="rbac-cell">&#10060;</span>
+                        </div>
+                        <div class="rbac-row">
+                            <span class="rbac-cell">Engineer</span>
+                            <span class="rbac-cell">&#9989;</span>
+                            <span class="rbac-cell">&#9989;</span>
+                            <span class="rbac-cell">&#10060;</span>
+                        </div>
+                        <div class="rbac-row">
+                            <span class="rbac-cell">Admin</span>
+                            <span class="rbac-cell">&#9989;</span>
+                            <span class="rbac-cell">&#9989;</span>
+                            <span class="rbac-cell">&#9989;</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to Security -->
         <section id="why" class="section">
-            <h2>Why Twin Security and Access Control Matters</h2>
+            <h2>Why Twin Security is Critical</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128274;</div>
+                    <h3>Protect IP</h3>
+                    <p>Your twin contains production secrets - recipes, settings, performance data competitors would love</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <div class="benefit-icon">&#9888;</div>
+                    <h3>Prevent Sabotage</h3>
+                    <p>A hacked twin could send wrong commands to real equipment - safety risk</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#128196;</div>
+                    <h3>Compliance</h3>
+                    <p>Regulations (GDPR, HIPAA, IEC 62443) require access controls and audit trails</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128269;</div>
+                    <h3>Audit Trail</h3>
+                    <p>Know who accessed what, when - essential for incident investigation</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific to Security -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where Security is Non-Negotiable</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#9889;</span>
+                    <h3>Critical Infrastructure</h3>
+                    <p>Power grids, water treatment - nation-state attack targets</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127973;</span>
+                    <h3>Healthcare</h3>
+                    <p>Patient data in building twins requires HIPAA compliance</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127981;</span>
+                    <h3>Defense & Aerospace</h3>
+                    <p>Classified twin data requires military-grade security</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128176;</span>
+                    <h3>Financial Services</h3>
+                    <p>Building twins with trading floor data need strict access controls</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to Security -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
+            <h2>Who Manages Twin Security</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128274;</span>
+                    <h3>Security Architects</h3>
+                    <p>Design authentication, authorization, and encryption strategies</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>IAM Administrators</h3>
+                    <p>Manage user accounts, roles, and permissions (Azure AD, Okta)</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128269;</span>
+                    <h3>SOC Analysts</h3>
+                    <p>Monitor for suspicious access patterns and respond to incidents</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128196;</span>
+                    <h3>Compliance Officers</h3>
+                    <p>Ensure twin security meets regulatory requirements</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to Security -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How Twin Security Works</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128100;</span>
+                    <h4>Authenticate</h4>
+                    <p>Verify identity (SSO, MFA, certificates)</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128274;</span>
+                    <h4>Authorize</h4>
+                    <p>Check role permissions (RBAC/ABAC)</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#128272;</span>
+                    <h4>Encrypt</h4>
+                    <p>Protect data in transit (TLS) and at rest (AES)</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128221;</span>
+                    <h4>Log</h4>
+                    <p>Record all access for audit trail</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128269;</span>
+                    <h4>Monitor</h4>
+                    <p>Detect anomalies and respond to threats</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch Security Flow</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../09_genai_with_digital_twins/html_demo/index.html">&larr; Previous: GenAI</a> | 
+           <a href="../11_industry_use_cases/html_demo/index.html">Next: Industry Use Cases &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

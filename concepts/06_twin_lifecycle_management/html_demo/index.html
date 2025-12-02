@@ -20,106 +20,229 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>06 - Twin Lifecycle Management</h1>
-        <p class="subtitle">Understanding twin lifecycle management in digital twin systems</p>
+        <p class="subtitle">From design to retirement - managing your twin's journey</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
             <h2>What is Twin Lifecycle Management?</h2>
-            <div class="content-wrapper">
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Managing a digital twin from birth to retirement, just like managing an employee's career.</p>
+                    <p>Just like a building has phases - <strong>design, construction, operation, renovation, demolition</strong> - your digital twin evolves through similar stages. Lifecycle management ensures the twin stays accurate and useful at every phase.</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>The processes and tools for managing digital twins through design, deployment, operation, and decommissioning phases.</p>
+                    <p>Twin lifecycle management encompasses version control, configuration management, model updates, data retention policies, and handover processes across design, build, operate, and decommission phases. It ensures twin fidelity and governance throughout the asset's life.</p>
+                </div>
+            </div>
+            
+            <!-- Lifecycle Wheel Animation -->
+            <div class="animation-container">
+                <h3>The Twin Lifecycle Wheel</h3>
+                <div class="lifecycle-demo">
+                    <div class="lifecycle-wheel">
+                        <div class="wheel-stage active" data-stage="design">
+                            <span class="stage-icon">&#128209;</span>
+                            <span class="stage-label">Design</span>
+                        </div>
+                        <div class="wheel-stage" data-stage="build">
+                            <span class="stage-icon">&#128295;</span>
+                            <span class="stage-label">Build</span>
+                        </div>
+                        <div class="wheel-stage" data-stage="deploy">
+                            <span class="stage-icon">&#128640;</span>
+                            <span class="stage-label">Deploy</span>
+                        </div>
+                        <div class="wheel-stage" data-stage="operate">
+                            <span class="stage-icon">&#9881;</span>
+                            <span class="stage-label">Operate</span>
+                        </div>
+                        <div class="wheel-stage" data-stage="optimize">
+                            <span class="stage-icon">&#128200;</span>
+                            <span class="stage-label">Optimize</span>
+                        </div>
+                        <div class="wheel-stage" data-stage="retire">
+                            <span class="stage-icon">&#128451;</span>
+                            <span class="stage-label">Retire</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Stage Details Panel -->
+                    <div class="stage-details">
+                        <div class="stage-info" id="stageInfo">
+                            <h4>Design Phase</h4>
+                            <p>CAD models, requirements, simulation models created</p>
+                            <div class="artifacts">
+                                <span class="artifact">CAD Files</span>
+                                <span class="artifact">Requirements</span>
+                                <span class="artifact">Simulation Models</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Timeline View -->
+                <div class="timeline-demo">
+                    <h4>Asset Timeline: Pump P-101</h4>
+                    <div class="timeline">
+                        <div class="timeline-event" data-year="2020">
+                            <span class="event-year">2020</span>
+                            <span class="event-desc">Twin Created (v1.0)</span>
+                        </div>
+                        <div class="timeline-event" data-year="2021">
+                            <span class="event-year">2021</span>
+                            <span class="event-desc">Commissioned + Live Data</span>
+                        </div>
+                        <div class="timeline-event" data-year="2022">
+                            <span class="event-year">2022</span>
+                            <span class="event-desc">Model Updated (v2.0)</span>
+                        </div>
+                        <div class="timeline-event" data-year="2023">
+                            <span class="event-year">2023</span>
+                            <span class="event-desc">AI Analytics Added</span>
+                        </div>
+                        <div class="timeline-event future" data-year="2030">
+                            <span class="event-year">2030</span>
+                            <span class="event-desc">Planned Retirement</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to Lifecycle -->
         <section id="why" class="section">
-            <h2>Why Twin Lifecycle Management Matters</h2>
+            <h2>Why Lifecycle Management Matters</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128279;</div>
+                    <h3>Knowledge Continuity</h3>
+                    <p>When engineers leave, the twin preserves their knowledge - no more "tribal knowledge" lost</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <div class="benefit-icon">&#128196;</div>
+                    <h3>Version Control</h3>
+                    <p>Track every change to the twin model - who changed what, when, and why</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#128260;</div>
+                    <h3>Smooth Handovers</h3>
+                    <p>Engineering to Operations handover without losing design intent or context</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128451;</div>
+                    <h3>Clean Retirement</h3>
+                    <p>Archive historical data properly when assets are decommissioned</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific to Lifecycle -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where Lifecycle Management is Critical</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#9992;</span>
+                    <h3>Long-Life Assets</h3>
+                    <p>Aircraft (30+ years), power plants (40+ years), buildings (50+ years) need twins that evolve</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127981;</span>
+                    <h3>Regulated Industries</h3>
+                    <p>Pharma, nuclear, aerospace require full audit trails of all twin changes</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128260;</span>
+                    <h3>Multi-Phase Projects</h3>
+                    <p>Construction projects where design, build, and operate teams are different companies</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
+                    <h3>Fleet Operations</h3>
+                    <p>Managing 1000s of similar assets with twins at different lifecycle stages</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to Lifecycle -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
+            <h2>Who Manages the Twin Lifecycle</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128209;</span>
+                    <h3>Design Engineers</h3>
+                    <p>Create initial twin from CAD/BIM models during design phase</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128295;</span>
+                    <h3>Commissioning Teams</h3>
+                    <p>Connect twin to live data and validate against real asset</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128119;</span>
+                    <h3>Operations Teams</h3>
+                    <p>Use and maintain the twin during the operate phase</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128218;</span>
+                    <h3>Asset Managers</h3>
+                    <p>Decide when to update, upgrade, or retire twins</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to Lifecycle -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How Lifecycle Management Works</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128209;</span>
+                    <h4>Design Phase</h4>
+                    <p>Create twin from CAD/BIM, add simulation models, define data requirements</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128295;</span>
+                    <h4>Build Phase</h4>
+                    <p>Update twin with as-built changes, connect sensors, validate models</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#9881;</span>
+                    <h4>Operate Phase</h4>
+                    <p>Live data streaming, continuous model updates, analytics running</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128200;</span>
+                    <h4>Optimize Phase</h4>
+                    <p>Add AI models, improve fidelity, integrate new data sources</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128451;</span>
+                    <h4>Retire Phase</h4>
+                    <p>Archive data, document lessons learned, decommission twin</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch the Lifecycle</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../05_simulation_and_physics_models/html_demo/index.html">&larr; Previous: Simulation Models</a> | 
+           <a href="../07_cloud_edge_integration_for_twins/html_demo/index.html">Next: Cloud-Edge Integration &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

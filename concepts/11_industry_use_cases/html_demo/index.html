@@ -20,106 +20,243 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>11 - Industry Use Cases</h1>
-        <p class="subtitle">Understanding industry use cases in digital twin systems</p>
+        <p class="subtitle">Real stories of twins transforming industries</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
-            <h2>What is Industry Use Cases?</h2>
-            <div class="content-wrapper">
+            <h2>What are Industry Use Cases?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Real-world examples of how different industries use digital twins to solve problems.</p>
+                    <p>Every industry has unique challenges. A <strong>factory</strong> worries about machine breakdowns. A <strong>hospital</strong> worries about patient flow. A <strong>wind farm</strong> worries about turbine efficiency. Digital twins solve these specific problems in specific ways.</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Domain-specific applications of digital twin technology across manufacturing, energy, healthcare, and other sectors.</p>
+                    <p>Domain-specific implementations of digital twin technology, each with unique data models, integration patterns, analytics requirements, and value propositions tailored to industry-specific challenges and regulatory environments.</p>
+                </div>
+            </div>
+            
+            <!-- Industry Carousel -->
+            <div class="animation-container">
+                <h3>Explore Industry Twins</h3>
+                <div class="industry-carousel">
+                    <!-- Manufacturing -->
+                    <div class="industry-scene active" data-industry="manufacturing">
+                        <div class="scene-icon">&#127981;</div>
+                        <h4>Manufacturing</h4>
+                        <div class="scene-visual">
+                            <div class="factory-line">
+                                <div class="machine">&#9881;</div>
+                                <div class="machine">&#9881;</div>
+                                <div class="machine alert">&#9881;</div>
+                                <div class="machine">&#9881;</div>
+                            </div>
+                        </div>
+                        <div class="use-case-details">
+                            <p><strong>Problem:</strong> Unplanned downtime costs $50K/hour</p>
+                            <p><strong>Twin Solution:</strong> Predict machine failures 2 weeks ahead</p>
+                            <p><strong>Result:</strong> 35% reduction in unplanned downtime</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Wind Farm -->
+                    <div class="industry-scene" data-industry="energy">
+                        <div class="scene-icon">&#127744;</div>
+                        <h4>Wind Farm</h4>
+                        <div class="scene-visual">
+                            <div class="wind-turbines">
+                                <div class="turbine spinning">&#127744;</div>
+                                <div class="turbine spinning">&#127744;</div>
+                                <div class="turbine slow">&#127744;</div>
+                            </div>
+                        </div>
+                        <div class="use-case-details">
+                            <p><strong>Problem:</strong> Turbines underperforming vs. wind conditions</p>
+                            <p><strong>Twin Solution:</strong> Optimize blade pitch per turbine</p>
+                            <p><strong>Result:</strong> 8% increase in energy output</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Smart Building -->
+                    <div class="industry-scene" data-industry="buildings">
+                        <div class="scene-icon">&#127970;</div>
+                        <h4>Smart Building</h4>
+                        <div class="scene-visual">
+                            <div class="building-floors">
+                                <div class="floor occupied">Floor 3</div>
+                                <div class="floor empty">Floor 2</div>
+                                <div class="floor occupied">Floor 1</div>
+                            </div>
+                        </div>
+                        <div class="use-case-details">
+                            <p><strong>Problem:</strong> HVAC running at full blast in empty floors</p>
+                            <p><strong>Twin Solution:</strong> Occupancy-based climate control</p>
+                            <p><strong>Result:</strong> 25% reduction in energy costs</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Hospital -->
+                    <div class="industry-scene" data-industry="healthcare">
+                        <div class="scene-icon">&#127973;</div>
+                        <h4>Hospital</h4>
+                        <div class="scene-visual">
+                            <div class="hospital-flow">
+                                <div class="patient">&#128100;</div>
+                                <div class="patient">&#128100;</div>
+                                <div class="patient waiting">&#128100;</div>
+                            </div>
+                        </div>
+                        <div class="use-case-details">
+                            <p><strong>Problem:</strong> ER wait times exceeding 4 hours</p>
+                            <p><strong>Twin Solution:</strong> Simulate patient flow, optimize staffing</p>
+                            <p><strong>Result:</strong> 40% reduction in wait times</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn" data-industry="manufacturing">Manufacturing</button>
+                    <button class="carousel-btn" data-industry="energy">Energy</button>
+                    <button class="carousel-btn" data-industry="buildings">Buildings</button>
+                    <button class="carousel-btn" data-industry="healthcare">Healthcare</button>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to Use Cases -->
         <section id="why" class="section">
-            <h2>Why Industry Use Cases Matters</h2>
+            <h2>Why Study Industry Use Cases</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
+                    <div class="benefit-icon">&#128161;</div>
+                    <h3>Learn from Success</h3>
+                    <p>See what worked in similar industries - don't reinvent the wheel</p>
                 </div>
                 <div class="benefit-card">
                     <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
+                    <h3>Justify Investment</h3>
+                    <p>Real ROI numbers from real deployments help build your business case</p>
                 </div>
                 <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <div class="benefit-icon">&#9888;</div>
+                    <h3>Avoid Pitfalls</h3>
+                    <p>Learn from others' mistakes - common failure patterns to avoid</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128640;</div>
+                    <h3>Accelerate Adoption</h3>
+                    <p>Proven patterns and architectures speed up your implementation</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Deep Dive by Industry -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where Twins Create Most Value</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#127981;</span>
+                    <h3>Discrete Manufacturing</h3>
+                    <p>Automotive, electronics, aerospace - predictive maintenance, quality prediction, virtual commissioning</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#9889;</span>
+                    <h3>Process Industries</h3>
+                    <p>Oil & gas, chemicals, pharma - process optimization, batch tracking, safety monitoring</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#127970;</span>
+                    <h3>Real Estate & Facilities</h3>
+                    <p>Commercial buildings, campuses - energy optimization, space utilization, tenant experience</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128663;</span>
+                    <h3>Transportation & Logistics</h3>
+                    <p>Fleets, ports, railways - route optimization, asset tracking, predictive maintenance</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to Use Cases -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
+            <h2>Who Drives Industry Adoption</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128188;</span>
+                    <h3>Industry Champions</h3>
+                    <p>Domain experts who understand the specific pain points and can translate to twin requirements</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>Solution Architects</h3>
+                    <p>Design industry-specific twin architectures that integrate with existing systems</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
-                    <h3>Data Scientists</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
+                    <h3>Domain Data Scientists</h3>
+                    <p>Build ML models that understand industry-specific physics and patterns</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128119;</span>
+                    <h3>Operations Teams</h3>
+                    <p>The end users who validate that the twin actually solves their daily problems</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Implementation Pattern -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How to Apply Use Cases to Your Industry</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128269;</span>
+                    <h4>Identify Pain Points</h4>
+                    <p>What costs you the most? Downtime? Energy? Quality?</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128218;</span>
+                    <h4>Study Similar Cases</h4>
+                    <p>Find twins solving similar problems in your or adjacent industries</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#128295;</span>
+                    <h4>Adapt the Pattern</h4>
+                    <p>Customize the architecture for your specific data and systems</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128640;</span>
+                    <h4>Pilot Small</h4>
+                    <p>Start with one asset or process to prove value</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128200;</span>
+                    <h4>Scale with Proof</h4>
+                    <p>Use pilot ROI to justify broader rollout</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch Implementation Journey</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../10_twin_security_and_access_control/html_demo/index.html">&larr; Previous: Security</a> | 
+           <a href="../12_governance_compliance_and_standards/html_demo/index.html">Next: Governance &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>

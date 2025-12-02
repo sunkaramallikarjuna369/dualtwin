@@ -20,106 +20,219 @@
             <button id="viewToggle" class="view-toggle">Technical View</button>
         </nav>
         <h1>08 - AI and Analytics on Twins</h1>
-        <p class="subtitle">Understanding ai and analytics on twins in digital twin systems</p>
+        <p class="subtitle">Teaching your twin to think and predict</p>
     </header>
 
     <main>
+        <!-- WHAT Section -->
         <section id="what" class="section">
-            <h2>What is AI and Analytics on Twins?</h2>
-            <div class="content-wrapper">
+            <h2>What is AI & Analytics on Twins?</h2>
+            <div class="explanation-box">
                 <div class="non-technical">
                     <h3>Simple Explanation</h3>
-                    <p>Teaching your digital twin to learn from data and make smart predictions.</p>
+                    <p>Imagine your twin has a <strong>brain</strong> that learns from past data. It can spot when something looks "weird" (anomaly detection), predict when a part will fail (predictive maintenance), and suggest the best settings (optimization).</p>
                 </div>
                 <div class="technical hidden">
                     <h3>Technical Definition</h3>
-                    <p>Machine learning and statistical methods applied to digital twin data for anomaly detection, prediction, and optimization.</p>
+                    <p>AI/ML models (time-series forecasting, classification, clustering, reinforcement learning) applied to twin data streams. Includes anomaly detection (isolation forests, autoencoders), predictive maintenance (survival analysis, RUL prediction), and optimization (genetic algorithms, Bayesian optimization).</p>
+                </div>
+            </div>
+            
+            <!-- AI Brain Demo -->
+            <div class="animation-container">
+                <h3>Watch AI Analyze Twin Data</h3>
+                <div class="ai-demo">
+                    <!-- Data Stream -->
+                    <div class="data-stream-panel">
+                        <h4>Live Twin Data</h4>
+                        <div class="data-chart">
+                            <div class="chart-line normal"></div>
+                            <div class="chart-point anomaly" data-value="!">
+                                <span class="anomaly-marker">!</span>
+                            </div>
+                        </div>
+                        <div class="data-values">
+                            <span class="value-item">Temp: 72°C</span>
+                            <span class="value-item">Vibration: 2.3mm/s</span>
+                            <span class="value-item">Pressure: 4.2 bar</span>
+                        </div>
+                    </div>
+                    
+                    <!-- AI Brain -->
+                    <div class="ai-brain-panel">
+                        <div class="brain-icon">&#129504;</div>
+                        <h4>AI Model</h4>
+                        <div class="model-selector">
+                            <button class="model-btn active" data-model="threshold">Simple Threshold</button>
+                            <button class="model-btn" data-model="ml">ML Model</button>
+                            <button class="model-btn" data-model="predictive">Predictive</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Output Panel -->
+                    <div class="ai-output-panel">
+                        <h4>AI Insights</h4>
+                        <div class="insight-card alert">
+                            <span class="insight-icon">&#9888;</span>
+                            <span class="insight-text">Anomaly Detected: Vibration spike at 14:32</span>
+                        </div>
+                        <div class="insight-card prediction">
+                            <span class="insight-icon">&#128302;</span>
+                            <span class="insight-text">Bearing failure predicted in 847 hours</span>
+                        </div>
+                        <div class="insight-card recommendation">
+                            <span class="insight-icon">&#128161;</span>
+                            <span class="insight-text">Recommendation: Schedule maintenance by March 15</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Threshold Demo -->
+                <div class="threshold-demo">
+                    <h4>Try It: Adjust the Anomaly Threshold</h4>
+                    <div class="threshold-control">
+                        <label>Threshold: <span id="thresholdValue">80</span>°C</label>
+                        <input type="range" id="thresholdSlider" min="60" max="100" value="80">
+                    </div>
+                    <div class="threshold-result">
+                        <p>False Positives: <span id="falsePositives">2</span></p>
+                        <p>Missed Anomalies: <span id="missedAnomalies">1</span></p>
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- WHY Section - Specific to AI -->
         <section id="why" class="section">
-            <h2>Why AI and Analytics on Twins Matters</h2>
+            <h2>Why AI on Twins is Powerful</h2>
             <div class="benefits-grid">
                 <div class="benefit-card">
+                    <div class="benefit-icon">&#128269;</div>
+                    <h3>Anomaly Detection</h3>
+                    <p>Spot unusual patterns humans would miss - catch problems before they escalate</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#128302;</div>
+                    <h3>Predictive Maintenance</h3>
+                    <p>Know when parts will fail weeks in advance - schedule repairs, not emergencies</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">&#127919;</div>
+                    <h3>Optimization</h3>
+                    <p>Find the perfect settings automatically - maximize output, minimize energy</p>
+                </div>
+                <div class="benefit-card">
                     <div class="benefit-icon">&#128200;</div>
-                    <h3>Improved Insights</h3>
-                    <p>Better understanding of system behavior</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#128176;</div>
-                    <h3>Cost Savings</h3>
-                    <p>Reduced operational expenses</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">&#9889;</div>
-                    <h3>Efficiency</h3>
-                    <p>Optimized operations and processes</p>
+                    <h3>Root Cause Analysis</h3>
+                    <p>When something fails, AI traces back through data to find the real cause</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHERE Section - Specific to AI -->
         <section id="where" class="section">
-            <h2>Where It's Used</h2>
-            <div class="industries-container">
-                <div class="industry-item">
-                    <div class="industry-icon">&#127981;</div>
-                    <h3>Manufacturing</h3>
+            <h2>Where AI Analytics Shine</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#9881;</span>
+                    <h3>Predictive Maintenance</h3>
+                    <p>Predict bearing failures, motor burnouts, pump cavitation before they happen</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#9889;</div>
-                    <h3>Energy</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128200;</span>
+                    <h3>Quality Prediction</h3>
+                    <p>Predict product defects from process parameters before inspection</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#127970;</div>
-                    <h3>Buildings</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#9889;</span>
+                    <h3>Energy Optimization</h3>
+                    <p>ML finds optimal HVAC settings that humans would never discover</p>
                 </div>
-                <div class="industry-item">
-                    <div class="industry-icon">&#128663;</div>
-                    <h3>Transportation</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128663;</span>
+                    <h3>Fleet Analytics</h3>
+                    <p>Compare 1000s of similar assets to find best-performing configurations</p>
                 </div>
             </div>
         </section>
 
+        <!-- WHO Section - Specific to AI -->
         <section id="who" class="section">
-            <h2>Who Uses This</h2>
-            <div class="roles-container">
-                <div class="role-card">
-                    <div class="role-icon">&#128119;</div>
-                    <h3>Operators</h3>
-                </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128736;</div>
-                    <h3>Engineers</h3>
-                </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128202;</div>
+            <h2>Who Builds and Uses Twin AI</h2>
+            <div class="card-grid">
+                <div class="card-item">
+                    <span class="card-icon">&#128202;</span>
                     <h3>Data Scientists</h3>
+                    <p>Build and train ML models on twin data (Python, TensorFlow, scikit-learn)</p>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">&#128188;</div>
-                    <h3>Managers</h3>
+                <div class="card-item">
+                    <span class="card-icon">&#128187;</span>
+                    <h3>ML Engineers</h3>
+                    <p>Deploy models to production, monitor drift, retrain pipelines</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-icon">&#128736;</span>
+                    <h3>Domain Experts</h3>
+                    <p>Validate model outputs - "Does this prediction make physical sense?"</p>
+                </div>
+                <div class="card-item">
+                    <span class="card-icon">&#128119;</span>
+                    <h3>Operators</h3>
+                    <p>Act on AI recommendations - schedule maintenance, adjust setpoints</p>
                 </div>
             </div>
         </section>
 
+        <!-- HOW Section - Specific to AI -->
         <section id="how" class="section">
-            <h2>How It Works</h2>
-            <div class="architecture-demo">
-                <div class="step-container">
-                    <button id="prevStep" class="step-btn">&larr; Previous</button>
-                    <span id="stepIndicator">Step 1 of 3</span>
-                    <button id="nextStep" class="step-btn">Next &rarr;</button>
+            <h2>How AI Analytics Work on Twins</h2>
+            <div class="process-flow">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <span class="step-icon">&#128202;</span>
+                    <h4>Collect History</h4>
+                    <p>Gather months/years of twin data including failures</p>
                 </div>
-                <div class="step-description" id="stepDescription">
-                    <p><strong>Step 1:</strong> Data is collected from physical systems through sensors and IoT devices.</p>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <span class="step-icon">&#128295;</span>
+                    <h4>Feature Engineering</h4>
+                    <p>Create meaningful signals: rolling averages, rate of change, FFT</p>
                 </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <span class="step-icon">&#129504;</span>
+                    <h4>Train Model</h4>
+                    <p>Teach ML to recognize patterns that precede failures</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <span class="step-icon">&#128640;</span>
+                    <h4>Deploy to Twin</h4>
+                    <p>Run model on live data stream, generate alerts</p>
+                </div>
+                <span class="flow-arrow">&#8594;</span>
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <span class="step-icon">&#128260;</span>
+                    <h4>Feedback Loop</h4>
+                    <p>Validate predictions, retrain with new data</p>
+                </div>
+            </div>
+            <div class="demo-controls">
+                <button id="runDemo" class="run-btn">&#9654; Watch AI Learn</button>
+                <button id="resetDemo" class="reset-btn">&#8635; Reset</button>
             </div>
         </section>
     </main>
 
     <footer>
         <p>DualTwin Technologies 360 - Digital Twin Learning Platform</p>
+        <p><a href="../07_cloud_edge_integration_for_twins/html_demo/index.html">&larr; Previous: Cloud-Edge</a> | 
+           <a href="../09_genai_with_digital_twins/html_demo/index.html">Next: GenAI with Twins &rarr;</a></p>
     </footer>
 
     <script src="script.js"></script>
